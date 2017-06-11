@@ -31,20 +31,6 @@
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main">
 
-				<?php if ( has_nav_menu( 'social' ) ) : ?>
-					<nav class="social-nav" role="navigation">
-						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'social',
-								'menu_class'     => 'social-links-menu',
-								'depth'          => 1,
-								'link_before'    => '<span class="screen-reader-text">',
-								'link_after'     => '</span>',
-							) );
-						?>
-					</nav><!-- .social-navigation -->
-				<?php endif; ?>
-				
 				<div class="site-branding">
 					<figure class="banner-logo"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logos/banner-logo.png" /></figure>
 
@@ -57,7 +43,17 @@
 					<?php endif; ?>
 				</div><!-- .site-branding -->
 
-				<?php if ( has_nav_menu( 'primary' ) || has_nav_menu( 'social' ) ) : ?>
+				<?php if ( has_nav_menu( 'social' ) ) : ?>
+					<nav id="social-navigation" class="social-navigation" role="navigation">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'social',
+								'menu_class'     => 'social-links-menu',
+							) );
+						?>
+					</nav><!-- .social-navigation -->
+				<?php endif; ?>
+
 					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
 
 					<div id="site-header-menu" class="site-header-menu">
@@ -72,21 +68,8 @@
 							</nav><!-- .main-navigation -->
 						<?php endif; ?>
 
-						<?php if ( has_nav_menu( 'social' ) ) : ?>
-							<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentysixteen' ); ?>">
-								<?php
-									wp_nav_menu( array(
-										'theme_location' => 'social',
-										'menu_class'     => 'social-links-menu',
-										'depth'          => 1,
-										'link_before'    => '<span class="screen-reader-text">',
-										'link_after'     => '</span>',
-									) );
-								?>
-							</nav><!-- .social-navigation -->
-						<?php endif; ?>
+
 					</div><!-- .site-header-menu -->
-				<?php endif; ?>
 			</div><!-- .site-header-main -->
 
 			<?php if ( get_header_image() ) : ?>

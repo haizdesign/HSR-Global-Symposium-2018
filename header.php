@@ -32,15 +32,7 @@
 			<div class="site-header-main">
 
 				<div class="site-branding">
-					<figure class="banner-logo"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logos/banner-logo.png" /></figure>
-
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-
-					<?php
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; ?></p>
-					<?php endif; ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="hsr2018 Global symposium on Health Systems Research"><figure class="banner-logo"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logos/banner-logo.svg" width="175" height="100" /></figure></a>
 				</div><!-- .site-branding -->
 
 				<?php if ( has_nav_menu( 'social' ) ) : ?>
@@ -49,6 +41,8 @@
 							wp_nav_menu( array(
 								'theme_location' => 'social',
 								'menu_class'     => 'social-links-menu',
+								'link_before'    => '<span class="screen-reader-text">',
+								'link_after'     => '</span>',
 							) );
 						?>
 					</nav><!-- .social-navigation -->

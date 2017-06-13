@@ -15,8 +15,6 @@
 
 	<?php twentysixteen_excerpt(); ?>
 
-	<?php twentysixteen_post_thumbnail(); ?>
-
 	<div class="entry-content">
 		<?php
 			the_content();

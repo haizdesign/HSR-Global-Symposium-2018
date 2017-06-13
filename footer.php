@@ -6,12 +6,13 @@
 ?>
 
 		</div><!-- .site-content -->
-    </div><!-- .site-inner -->
+    </div><!-- .outer -->
 </div><!-- .site -->
 
         <section class="testimonials">
             <article class="testimonial site-inner">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <p class="quote">One of the most refreshing elements has been the visibility of policymakers<br /> in the debates and sessions.</p>
+				<p>Qui omniatia quossum asin cuptibus</p>
             </article>
         </section><!-- .testimonials -->
 

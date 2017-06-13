@@ -3,8 +3,10 @@
 /*--------------------------------------------------------------
 1    Links
 2    Header
-    2.1    Navigation
+    2.1    Main navigation
+    2.2    Social navigation
 3    Content
+    3.1    Images
 4    Footer
 5    Widgets
 --------------------------------------------------------------*/
@@ -47,12 +49,79 @@ a {
         padding: 1em 4.5455% 0;
         margin-bottom: 1.75em;
         position: relative;
-        border-bottom: 2px solid $brightgreen;
+        border-bottom: 2px solid $green;
     }
     .site-branding {
         margin-top: 0;
     }
 }
+.site-header-main {
+    position: relative;
+}
+/* 2.1    Main navigation */
+.site-header-menu {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 0;
+}
+.main-navigation a {
+    color: $darkgrey;
+}
+.main-navigation .primary-menu a:hover,
+.main-navigation .primary-menu a:focus,
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
+    color: $green;
+}
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-ancestor > a {
+    font-weight: 300;
+    color: $green;
+    position: relative;
+}
+.main-navigation .menu-item-has-children > a {
+    padding-right: 0.875em;
+}
+.main-navigation .menu-item-has-children > a:after {
+    content: '';
+    margin: 0;
+    padding-right: 0.65625em;
+}
+.main-navigation .current-menu-item > a:after { /* adds traingle under current page item */
+    border-left:  10px solid transparent;
+    border-right:  10px solid transparent;
+    border-bottom:  10px solid $green;
+    position: absolute;
+    left: calc(50% - 10px);
+    top: 75%;
+    width: 0;
+    height: 0;
+    content: '';
+}
+.main-navigation li:hover > ul,
+.main-navigation li.focus > ul { /* centres the sub menu */
+    right: auto;
+}
+.main-navigation ul ul:after { /* hides the 2016 top border cover */
+    border: none;
+}
+.main-navigation ul ul:before { /* hides the triangle */
+    border-color: white transparent;
+    border-width: 0 10px 10px;
+    left: calc(50% - 9px);
+    right: calc(50% - 9px);
+    top: -9px;
+}
+.main-navigation ul ul,
+.main-navigation ul ul li {
+    border-color: $green;
+    border-width: 2px 2px 0;
+}
+.main-navigation ul ul li:last-child {
+    border-bottom-width: 2px;
+}
+/* 2.2    Social navigation */
 .social-links-menu {
     list-style: none;
     float: right;
@@ -66,40 +135,44 @@ a {
 }
 .social-links-menu a:hover,
 .social-links-menu a:hover:before {
-    color: $brightgreen;
-    border-color: $brightgreen;
+    color: $green;
+    border-color: $green;
 }
 @media screen and (min-width: 56.875em) {
     .site-header .social-navigation {
         display: block;
     }
 }
-.site-header-main {
-    position: relative;
+.social-navigation a:before {
+    font-family: 'fontawesome';
 }
-// 2.1    Navigation
-.site-header-menu {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin-bottom: 0;
+.social-navigation a[href*="twitter.com"]:before {
+    content: '\f099';
 }
-.main-navigation .current-menu-item > a,
-.main-navigation .current-menu-ancestor > a {
-    font-weight: 300;
-    color: $brightgreen;
+.social-navigation a[href*="facebook.com"]:before {
+    content: '\f09a';
 }
-.main-navigation .menu-item-has-children > a {
-    padding-right: 0;
+.social-navigation a[href*="youtube.com"]:before {
+    content: '\f167';
 }
-.main-navigation .menu-item-has-children > a:after {
-    content: '';
-    margin: 0;
-    padding-right: 0.65625em;
+.social-navigation a[href*="flickr.com"]:before {
+    content: '\f211';
+    font-family: 'genericons';
 }
 /*--------------------------------------------------------------
 3    Content
 --------------------------------------------------------------*/
+/* 3.1    Images */
+.post-thumbnail {
+    margin-top: -1.75em;
+    overflow: hidden;
+    max-height: 500px;
+}
+.post-thumbnail img {
+    width: 100vw;
+    top: -50%;
+    bottom: -50%;
+}
 
 /*--------------------------------------------------------------
 4    Footer
@@ -107,6 +180,16 @@ a {
 .testimonials {
     background: $paleblue;
     padding: 4.5455% 4.5455% 10%;
+    text-align: center;
+
+    p {
+        margin-bottom: 0.5em;
+        line-height: 1.2;
+    }
+
+    .quote {
+        font-size: 1.5em;
+    }
 }
 .site-footer a:link,
 .site-footer a:visited {
@@ -114,7 +197,7 @@ a {
 }
 .site-footer a:hover,
 .site-footer a:active {
-    color: $brightgreen;
+    color: $green;
 }
 .site-footer .social-links-menu a {
     color: white;
@@ -129,8 +212,8 @@ a {
 }
 .site-footer .social-links-menu a:hover,
 .site-footer .social-links-menu a:hover:before {
-    color: $brightgreen;
-    border-color: $brightgreen;
+    color: $green;
+    border-color: $green;
 }
 .site-footer {
     color: white;

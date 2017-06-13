@@ -10,6 +10,7 @@ function haizdesign_enqueue_styles() {
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
+    wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/font-awesome/font-awesome.min.css');
 }
 // add some more stuff here
 add_action( 'wp_enqueue_scripts', 'haizdesign_enqueue_styles' );

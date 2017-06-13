@@ -1,10 +1,13 @@
 @import 'colors';
 
-/*
+/*--------------------------------------------------------------
 1    Links
 2    Header
-3    Footer
-*/
+    2.1    Navigation
+3    Content
+4    Footer
+5    Widgets
+--------------------------------------------------------------*/
 
 html, body {
     color: $darkgrey;
@@ -41,7 +44,10 @@ a {
 --------------------------------------------------------------*/
 @media screen and (min-width: 61.5625em) {
     .site-header {
-        padding: 1em 4.5455%;
+        padding: 1em 4.5455% 0;
+        margin-bottom: 1.75em;
+        position: relative;
+        border-bottom: 2px solid $brightgreen;
     }
     .site-branding {
         margin-top: 0;
@@ -68,8 +74,35 @@ a {
         display: block;
     }
 }
+.site-header-main {
+    position: relative;
+}
+// 2.1    Navigation
+.site-header-menu {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 0;
+}
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-ancestor > a {
+    font-weight: 300;
+    color: $brightgreen;
+}
+.main-navigation .menu-item-has-children > a {
+    padding-right: 0;
+}
+.main-navigation .menu-item-has-children > a:after {
+    content: '';
+    margin: 0;
+    padding-right: 0.65625em;
+}
 /*--------------------------------------------------------------
-3    Footer
+3    Content
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+4    Footer
 --------------------------------------------------------------*/
 .testimonials {
     background: $paleblue;
@@ -181,4 +214,10 @@ span.footer-contacts {
     /* -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2; */
+}
+/*--------------------------------------------------------------
+5    Widgets
+--------------------------------------------------------------*/
+.widget {
+    border-top: none;
 }

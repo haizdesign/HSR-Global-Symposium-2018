@@ -5,7 +5,7 @@ This is the template used on the main site landing page
 */
 get_header(); ?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="content-area home">
     <main id="main" class="site-main" role="main">
 
     <?php if ( have_posts() ) : ?>
@@ -45,5 +45,4 @@ get_header(); ?>
     </main><!-- .site-main -->
 </div><!-- .content-area -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

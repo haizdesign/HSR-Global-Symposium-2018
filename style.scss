@@ -169,10 +169,14 @@ a {
     max-height: 500px;
 }
 .post-thumbnail img {
-    width: 100vw;
-    top: -50%;
-    bottom: -50%;
+    /* width: 100vw; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
+/* */
 
 /*--------------------------------------------------------------
 4    Footer

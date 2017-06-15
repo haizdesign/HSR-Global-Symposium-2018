@@ -9,7 +9,17 @@ get_header(); ?>
     <main id="main" class="site-main" role="main">
 
         <article class="home-box">
-            This is an article
+            <?php
+                $homenews = new WP_Query($args);
+                $args = array( 'post_type' => 'post',
+                'numberposts' => 3, 'order'=> 'DESC',
+                'orderby' => 'post_date' );
+
+                while($homenews->have_posts()) : $homenews->the_post();
+            ?>
+            <?php echo the_title(); ?>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
         </article>
 
         <article class="home-updates">

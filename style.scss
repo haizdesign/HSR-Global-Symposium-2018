@@ -6,7 +6,10 @@
     2.1    Main navigation
     2.2    Social navigation
 3    Content
-    3.1    Images
+    3.1    Containers
+    3.2    Headings
+    3.3    Text
+    3.4    Images
 4    Footer
 5    Widgets
 --------------------------------------------------------------*/
@@ -162,7 +165,29 @@ a {
 /*--------------------------------------------------------------
 3    Content
 --------------------------------------------------------------*/
-/* 3.1    Images */
+/* 3.1    Containers */
+.content-area.home {
+    width: 100%;
+}
+/* 3.2    Headings */
+.entry-title {
+    position: relative;
+    border-bottom: 2px solid;
+}
+.entry-title:before,
+.entry-title:after {
+    content: '';
+    position: absolute;
+    width: 9600px;
+    border-bottom: 2px solid;
+    right: 100%;
+    bottom: -2px;
+}
+.entry-title:after {
+    left: 100%;
+}
+/* 3.3    Text */
+/* 3.4    Images */
 .post-thumbnail {
     margin-top: -1.75em;
     overflow: hidden;
@@ -170,8 +195,6 @@ a {
 }
 .post-thumbnail img {
     width: 100vw;
-    top: -50%;
-    bottom: -50%;
 }
 /* */
 .content-area.home {

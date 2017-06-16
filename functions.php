@@ -11,6 +11,9 @@ function haizdesign_enqueue_styles() {
         wp_get_theme()->get('Version')
     );
     wp_enqueue_style( 'fontawesome', get_stylesheet_directory_uri() . '/font-awesome/font-awesome.min.css');
+    if (is_front_page) {
+        wp_enqueue_style( 'homestyles', get_stylesheet_directory_uri(). '/home-style.min.css' );
+    }
 }
 // add some more stuff here
 add_action( 'wp_enqueue_scripts', 'haizdesign_enqueue_styles' );

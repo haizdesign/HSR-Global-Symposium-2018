@@ -26,17 +26,11 @@ html, body {
 }
 *,
 html,
-body,
-h1, h2, h3, h4, h5, h6,
-.entry-title,
-.widget-title {
+body {
     font-family: 'aller', arial, sans-serif;
     font-weight: 300;
 }
-h1.entry-title {
-    font-weight: 700;
-    text-transform: uppercase;
-}
+
 /*--------------------------------------------------------------
 1    Links
 --------------------------------------------------------------*/
@@ -170,6 +164,16 @@ a {
     width: 100%;
 }
 /* 3.2    Headings */
+h1, h2, h3, h4, h5, h6,
+.entry-title,
+.widget-title {
+    font-family: 'aller', arial, sans-serif;
+    font-weight: 300;
+}
+h1.entry-title {
+    font-weight: 700;
+    text-transform: uppercase;
+}
 .entry-title {
     position: relative;
     border-bottom: 2px solid;
@@ -196,10 +200,44 @@ a {
 .post-thumbnail img {
     width: 100vw;
 }
-/* */
-.content-area.home {
-    width: 100%;
+/* Forms */
+button,
+.btn,
+a.btn {
+    color: white;
+    background: $green;
+    border-radius: 0;
+    font-family: 'Aller', Arial, sans-serif;
+    font-weight: 300;
+    text-transform: none;
+    position: relative;
 }
+button:hover,
+.btn:hover,
+.btn a:hover,
+button:hover:after,
+.btn:hover:after,
+a.btn:hover:after {
+    background: $darkblue;
+}
+button:after,
+.btn:after,
+a.btn:after {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 100%;
+    right: 0;
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    -webkit-transform: skewY(-20deg);
+    transform: skewX(-20deg);
+    -webkit-transform-origin: right;
+    transform-origin: top;
+    background: #8fc034;
+}
+
 
 /*--------------------------------------------------------------
 4    Footer

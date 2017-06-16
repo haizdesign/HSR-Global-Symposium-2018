@@ -1,0 +1,38 @@
+@import 'colors';
+
+.content-area.home {
+    width: 100%;
+}
+section {
+    margin-bottom: 3em;
+}
+.home-news {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.news-boxes {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+
+    .home-box {
+        border: 1px solid $green;
+        padding: 1em;
+        margin-bottom: 1em;
+
+        p {
+            max-width: 50%;
+        }
+    }
+}

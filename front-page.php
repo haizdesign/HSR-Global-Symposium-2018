@@ -8,19 +8,28 @@ get_header(); ?>
 <div id="primary" class="content-area home">
     <main id="main" class="site-main" role="main">
 
-        <article class="home-box">
-            <?php
-                $homenews = new WP_Query($args);
-                $args = array( 'post_type' => 'post',
-                'numberposts' => 3, 'order'=> 'DESC',
-                'orderby' => 'post_date' );
+        <section class="home-news">
+            <div class="news-boxes content-area">
+                    <?php
+                        $homenews = new WP_Query('posts_per_page = 3');
 
-                while($homenews->have_posts()) : $homenews->the_post();
-            ?>
-            <?php echo the_title(); ?>
-        <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
-        </article>
+                        while($homenews -> have_posts()) : $homenews -> the_post();
+                    ?>
+                    <article class="home-box">
+                        <a href="<?php the_permalink(); ?>"><h1 class="home-post-title"><?php the_title(); ?></h1></a>
+                        <?php the_excerpt(); ?>
+                        <a href="<?php the_permalink(); ?>"><button  class="btn">Read more</button></a>
+                    </article>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            </div><!-- .news-boxes -->
+            <div class="home-subscribe secondary">
+                <div class="subscribe-header">
+                    <span>Receive email updates</span>
+                </div>
+            </div><!-- .home-subscribe -->
+        </section>
+
 
         <article class="home-updates">
         	<header class="entry-header">

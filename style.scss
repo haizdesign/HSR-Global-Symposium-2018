@@ -118,6 +118,14 @@ a {
 .main-navigation ul ul li:last-child {
     border-bottom-width: 2px;
 }
+.menu-bg {
+    background: $darkgrey;
+    height: 180px;
+    width: 100vw;
+    position: absolute;
+    left: -50vw;
+    z-index: 1;
+}
 /* 2.2    Social navigation */
 .social-links-menu {
     list-style: none;

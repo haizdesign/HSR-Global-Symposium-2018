@@ -14,6 +14,7 @@ function haizdesign_enqueue_styles() {
     if (is_front_page) {
         wp_enqueue_style( 'homestyles', get_stylesheet_directory_uri(). '/home-style.min.css' );
     }
+    wp_enqueue_script('hdjquery', get_stylesheet_directory_uri() . '/js/hd.jquery.js', array(jquery), '160617', true);
 }
 // add some more stuff here
 add_action( 'wp_enqueue_scripts', 'haizdesign_enqueue_styles' );

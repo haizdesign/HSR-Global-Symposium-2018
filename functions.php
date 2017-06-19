@@ -25,3 +25,31 @@ register_nav_menus( array(
     'social'  => __( 'Social Links Menu', 'haizdesign' ),
     'footer'  => __( 'Footer Menu', 'haizdesign' ),
 ) );
+
+// Featured image sizes
+add_theme_support('post-thumbnails');
+add_image_size('small-thumb', 300, 200, true);
+
+// Limit excerpt length
+function haizdesign_excerpt_length ($length) {
+    return 30;
+}
+add_filter ('excerpt_length', 'haizdesign_excerpt_length', 999);
+
+// Custom more link text
+function haizdesign_excerpt_more() {
+	$link = sprintf( '<a href="%1$s" class="more-link"><button  class="btn">%2$s</button></a>',
+		esc_url( get_permalink( get_the_ID() ) ),
+		/* translators: %s: Name of current post */
+		sprintf( __( 'Read more<span class="screen-reader-text"> "%s"</span>', 'haizdesign' ), get_the_title( get_the_ID() ) )
+	);
+	return ' &hellip; ' . $link;
+}
+add_filter( 'excerpt_more', 'haizdesign_excerpt_more' );
+
+function haizdesign_theme_setup() {
+	// override parent theme's 'more' text for excerpts
+	remove_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );
+	remove_filter( 'get_the_excerpt', 'twentysixteen_excerpt_more' );
+}
+add_action( 'after_setup_theme', 'haizdesign_theme_setup' );

@@ -7,22 +7,30 @@ get_header(); ?>
 
 <div id="primary" class="content-area home">
     <main id="main" class="site-main" role="main">
-
-        <section class="home-news">
-            <div class="news-boxes content-area">
-                    <?php
-                        $homenews = new WP_Query('posts_per_page = 3');
-
-                        while($homenews -> have_posts()) : $homenews -> the_post();
+        <div class="header-badge">
+                <h1>Join us in<br>
+                <span>Liverpool</span><br>
+                7-12 October 2018</h1>
+        </div>
+        <!-- Home CTAs -->
+        <section class="home-cta">
+            <div class="cta-boxes content-area">
+                <?php if (have_rows('home_cta')): ?>
+                    <?php while (have_rows('home_cta')) : the_row();
+                    // vars
+                    $cta_title = get_sub_field('cta_title');
+                    $cta_excerpt = get_sub_field('cta_excerpt');
+                    $cta_button = get_sub_field('cta_button');
                     ?>
-                    <article class="home-box">
-                        <a href="<?php the_permalink(); ?>"><h1 class="home-post-title"><?php the_title(); ?></h1></a>
-                        <?php the_excerpt(); ?>
-                        <a href="<?php the_permalink(); ?>"><button  class="btn">Read more</button></a>
+
+                    <article class="cta-box">
+                        <h1 class="home-cta-title"><?php echo $cta_title; ?></h1>
+                        <?php echo $cta_excerpt; ?>
+                        <a href="<?php echo $cta_button; ?>"><button  class="btn">Read more</button></a>
                     </article>
                 <?php endwhile; ?>
-                <?php wp_reset_postdata(); ?>
-            </div><!-- .news-boxes -->
+            <?php endif; ?>
+            </div><!-- .cta-boxes -->
             <div class="home-subscribe secondary">
                 <div class="subscribe-header">
                     <span>Receive email updates</span>
@@ -30,10 +38,26 @@ get_header(); ?>
             </div><!-- .home-subscribe -->
         </section>
 
-
+        <!-- Updates/blog -->
         <article class="home-updates">
         	<header class="entry-header">
         		<h1 class="entry-title">Updates</h1>
+                <section class="home-news">
+                    <div class="news-boxes content-area home">
+                            <?php
+                                $homenews = new WP_Query('posts_per_page = 3');
+
+                                while($homenews -> have_posts()) : $homenews -> the_post();
+                            ?>
+                            <article class="home-box">
+                                <?php the_post_thumbnail('small-thumb'); ?>
+                                <a href="<?php the_permalink(); ?>"><h1 class="home-post-title"><?php the_title(); ?></h1></a>
+                                <?php the_excerpt(); ?>
+                            </article>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
+                    </div><!-- .news-boxes -->
+                </section>
         	</header><!-- .entry-header -->
 
         	<div class="entry-content">

@@ -113,10 +113,12 @@ a {
 .main-navigation ul ul,
 .main-navigation ul ul li {
     border-color: $green;
-    border-width: 2px 2px 0;
-}
-.main-navigation ul ul li:last-child {
-    border-bottom-width: 2px;
+    border-width: 0;
+    background: $darkgrey;
+
+    a {
+        color: white;
+    }
 }
 .menu-bg {
     background: $darkgrey;
@@ -168,6 +170,13 @@ a {
 3    Content
 --------------------------------------------------------------*/
 /* 3.1    Containers */
+section.testimonials {
+    margin-bottom: 0;
+}
+.site-content {
+    position: relative;
+    margin-top: 6em;
+}
 .content-area.home {
     width: 100%;
 }
@@ -204,9 +213,27 @@ h1.entry-title {
     margin-top: -1.75em;
     overflow: hidden;
     max-height: 500px;
+    position: relative;
+
+    .thumbnail-inner {
+        margin: 0 auto;
+        max-width: 1320px;
+        padding-left: 10%;
+    }
+
+    .featured-caption {
+        position: absolute;
+        left: 0;
+        bottom: 1em;
+        z-index: 2;
+        color: white;
+        font-weight: 700;
+        font-size: 2.2em;
+    }
 }
 .post-thumbnail img {
     width: 100vw;
+    z-index: 1;
 }
 /* Forms */
 button,

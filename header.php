@@ -62,7 +62,6 @@
 							</nav><!-- .main-navigation -->
 						<?php endif; ?>
 
-
 					</div><!-- .site-header-menu -->
 			</div><!-- .site-header-main -->
 

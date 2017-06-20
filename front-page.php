@@ -50,7 +50,9 @@ get_header(); ?>
                                 while($homenews -> have_posts()) : $homenews -> the_post();
                             ?>
                             <article class="home-box">
-                                <?php the_post_thumbnail('small-thumb'); ?>
+                                <figure class="image">
+                                    <?php the_post_thumbnail('small-thumb'); ?>
+                                </figure>
                                 <a href="<?php the_permalink(); ?>"><h1 class="home-post-title"><?php the_title(); ?></h1></a>
                                 <?php the_excerpt(); ?>
                             </article>

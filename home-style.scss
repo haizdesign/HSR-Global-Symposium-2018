@@ -165,7 +165,7 @@ mailchimp
             font-size: 2.2em;
         }
         .gform_description:after {
-            content: '\f003';
+            // content: '\f003';
             font-family: 'fontawesome';
             font-size: 2.2em;
             position: absolute;
@@ -203,7 +203,6 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     float: none;
 }
 .home-events {
-    background: $lightgrey;
     border-top:4px solid $darkblue;
 }
 .home-events .metaslider .caption-wrap {
@@ -215,7 +214,7 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     height: 200px;
 }
 .home-events .metaslider li {
-    width: 30% !important;
+    width: 30%;
 }
 .home-events .metaslider .caption
  br {
@@ -226,4 +225,7 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     padding: 20px;
     color: white;
     display: block;
+}
+.metaslider .slides img {
+    opacity: 0;
 }

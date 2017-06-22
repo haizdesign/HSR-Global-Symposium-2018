@@ -142,3 +142,12 @@ section {
                 flex: 1 1 100%;
     }
 }
+/* events*/
+body:not(.search-results) article:not(.type-page) .entry-content {
+    width: 100%;
+    float: none;
+}
+
+.home-keydates h1.entry-title {
+    color: $green;
+}

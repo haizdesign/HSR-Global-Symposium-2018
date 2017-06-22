@@ -31,9 +31,9 @@ get_header(); ?>
                 <?php endwhile; ?>
             <?php endif; ?>
             </div><!-- .cta-boxes -->
-            <div class="home-subscribe secondary">
+            <div class="subscribe mailchimp-form secondary">
                 <div class="subscribe-header">
-                    <span>Receive email updates</span>
+                    <?php gravity_form( 1, $display_title = false, $display_description = true, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true ); ?>
                 </div>
             </div><!-- .home-subscribe -->
         </section>
@@ -74,7 +74,7 @@ get_header(); ?>
         	</header><!-- .entry-header -->
 
         	<div class="entry-content">
-
+                <?php if ( function_exists( 'soliloquy' ) ) { soliloquy( '127' ); } ?>
         	</div><!-- .entry-content -->
 
         </article><!-- .home-keydates -->

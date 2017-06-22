@@ -31,10 +31,22 @@ get_header(); ?>
                 <?php endwhile; ?>
             <?php endif; ?>
             </div><!-- .cta-boxes -->
-            <div class="subscribe mailchimp-form secondary">
-                <div class="subscribe-header">
+            <div class="subscribe secondary">
+                <div class="mailchimp-form">
                     <?php gravity_form( 1, $display_title = false, $display_description = true, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true ); ?>
                 </div>
+                <?php if ( has_nav_menu( 'social' ) ) : ?>
+					<nav id="social-navigation" class="social-navigation" role="navigation">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'social',
+								'menu_class'     => 'social-links-menu',
+								'link_before'    => '<span class="screen-reader-text">',
+								'link_after'     => '</span>',
+							) );
+						?>
+					</nav><!-- .social-navigation -->
+				<?php endif; ?>
             </div><!-- .home-subscribe -->
         </section>
 
@@ -73,8 +85,8 @@ get_header(); ?>
         		<h1 class="entry-title">Key Dates</h1>
         	</header><!-- .entry-header -->
 
-        	<div class="entry-content">
-                <?php if ( function_exists( 'soliloquy' ) ) { soliloquy( '127' ); } ?>
+        	<div class="home-events entry-content">
+                <?php echo do_shortcode('[metaslider id=135]'); ?>
         	</div><!-- .entry-content -->
 
         </article><!-- .home-keydates -->

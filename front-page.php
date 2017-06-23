@@ -31,7 +31,7 @@ get_header(); ?>
                 <?php endwhile; ?>
             <?php endif; ?>
             </div><!-- .cta-boxes -->
-            <div class="subscribe secondary">
+            <div class="subscribe sidebar">
                 <div class="mailchimp-form">
                     <?php gravity_form( 1, $display_title = false, $display_description = true, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true ); ?>
                 </div>

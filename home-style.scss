@@ -243,6 +243,9 @@ mailchimp
     }
 }
 /* events*/
+.home-keydates h1.entry-title {
+    margin-bottom: 2.2em;
+}
 /*--------------------------------------------------------------
     metaslider
 --------------------------------------------------------------*/
@@ -253,6 +256,9 @@ body:not(.search-results) article:not(.type-page) .entry-content {
 .home-events {
     border-top:4px solid $darkblue;
 }
+.metaslider {
+    margin-top: -5em;
+}
 .home-events .metaslider .caption-wrap {
     opacity: 1;
     color: $darkblue;
@@ -260,6 +266,14 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     background: transparent;
     line-height: 3em;
     height: 200px;
+}
+.tribe_formatted_event_date:after {
+    content: '\f111';
+    font-family: 'fontawesome';
+    position: absolute;
+    left: 1px;
+    bottom: 73px;
+    font-size: 24px;
 }
 .home-events .metaslider li {
     width: 30%;
@@ -269,10 +283,20 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     height: 30px;
 }
 .metaslider .caption a {
-    background: #36a9e1;
+    background: $midblue;
     padding: 20px;
     color: white;
     display: block;
+}
+.metaslider .caption a:before {
+    content: '';
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-left: 10px solid $midblue;
+    position: absolute;
+    left: 10px;
+    top: 91px;
+
 }
 .metaslider .slides img {
     opacity: 0;

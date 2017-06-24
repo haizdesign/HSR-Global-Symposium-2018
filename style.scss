@@ -98,6 +98,9 @@ a {
     height: 0;
     content: '';
 }
+.main-navigation .sub-menu .current-menu-item > a:after { // removes the triangle on sub menu items
+    border: none;
+}
 .main-navigation .current-menu-item.menu-item-has-children > a:after {
     padding-right: 0;
 }

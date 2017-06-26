@@ -9,5 +9,5 @@ Plugins used in the making of this site:
 Advanced Custom Fields Pro
 The Events Calendar
 Gravity Forms
-Soliloquy Pro
+Metaslider Pro
 Elementor

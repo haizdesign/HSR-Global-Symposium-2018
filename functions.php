@@ -24,7 +24,6 @@ register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'haizdesign' ),
     'social'  => __( 'Social Links Menu', 'haizdesign' ),
     'footer'  => __( 'Footer Menu', 'haizdesign' ),
-    'mobile' => __( 'Mobile menu in left sidebar', 'haizdesign' ),
 ) );
 
 
@@ -56,18 +55,5 @@ function haizdesign_theme_setup() {
 }
 add_action( 'after_setup_theme', 'haizdesign_theme_setup' );
 
-//Add mobile sidebar
-function haizdesign_mobile_widget_area() {
-register_sidebar( array(
-'name' => __( 'Mobile Sidebar', 'haizdesign' ),
-'id' => 'sidebar-mobile',
-'description' => __( 'Slideout sidebar for mobile devices.', 'haizdesign' ),
-'before_widget' => '<aside id="%1$s" class="widget %2$s mobile-widget">',
-'after_widget' => '</aside>',
-'before_title' => '<h1 class="widget-title">',
-'after_title' => '</h1>',
-) );
-}
-add_action( 'widgets_init', 'haizdesign_mobile_widget_area' );
 
 

@@ -10,6 +10,7 @@
     3.2    Headings
     3.3    Text
     3.4    Images
+    3.5    Blog
 4    Footer
 5    Widgets
 6    Elementor
@@ -292,13 +293,12 @@ h1.entry-title {
     width: 100vw;
     z-index: 1;
 }
-@media screen and ( max-width: 700px ) {
+@media screen and ( max-width: 600px ) {
     .featured-caption {
         display: none;
     }
 }
-    
-}
+
 /* Forms */
 button,
 .btn,
@@ -356,7 +356,18 @@ a.btn:after,
 .elementor-widget-tabs.elementor-tabs-view-vertical .elementor-tabs-wrapper {
     padding-right: 1em;
 }
-
+/* 3.5  Blog */
+.blog article {
+    border: 1px solid $green;
+    padding: 1em;
+    .entry-title a {
+        color: $green;
+    }
+}
+.blog .entry-title:before,
+.blog .entry-title:after {
+        border: none;
+}
 
 
 /*--------------------------------------------------------------

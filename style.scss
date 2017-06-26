@@ -12,6 +12,7 @@
     3.4    Images
 4    Footer
 5    Widgets
+6    Elementor
 --------------------------------------------------------------*/
 
 html, body {
@@ -178,6 +179,9 @@ a {
 .site-main {
     position: relative;
 }
+.site-main > article {
+    margin-bottom: 0;
+}
 section.testimonials {
     margin-bottom: 0;
 }
@@ -229,11 +233,17 @@ section.testimonials {
     bottom: 0;
     left: 0;
 }
+@media screen and (max-width: 600px) {
+    .header-badge {
+        width: 100%;
+        margin-top: 1em;
+    }
+}
 /* 3.2    Headings */
 h1, h2, h3, h4, h5, h6,
 .entry-title,
 .widget-title {
-    font-family: 'aller', arial, sans-serif;
+    font-family: 'Aller', arial, sans-serif;
     font-weight: 300;
 }
 h1.entry-title {
@@ -275,13 +285,19 @@ h1.entry-title {
 .featured-caption {
     z-index: 2;
     color: white;
-    background:red;
     font-weight: 700;
     font-size: 2.2em;
 }
 .post-thumbnail img {
     width: 100vw;
     z-index: 1;
+}
+@media screen and ( max-width: 700px ) {
+    .featured-caption {
+        display: none;
+    }
+}
+    
 }
 /* Forms */
 button,
@@ -472,4 +488,10 @@ span.footer-contacts {
 --------------------------------------------------------------*/
 .widget {
     border-top: none;
+}
+/*--------------------------------------------------------------
+6    Elementor
+--------------------------------------------------------------*/
+.elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated {
+    padding: 0;
 }

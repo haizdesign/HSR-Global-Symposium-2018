@@ -12,46 +12,6 @@
 section {
     margin-bottom: 3em;
 }
-.header-badge {
-    background: $midblue;
-    color: white;
-    text-align: center;
-    text-transform: uppercase;
-    line-height: 1;
-    width: 25%;
-    position: absolute;
-    right: 0;
-    top: -10em;
-    padding-top: 1em;
-    border-top: 2px solid white;
-
-    h1 {
-        font-size: 20px;
-        position: relative;
-        z-index: 1;
-    }
-
-    span {
-        font-weight: 700;
-        font-size: 26px;
-    }
-}
-.header-badge h1:after {
-    content: '';
-    background: $midblue;
-    -webkit-transform-origin: bottom right;
-            transform-origin: bottom right;
-    -webkit-transform: skewY(-4deg);
-            transform: skewY(-4deg);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-}
 .home-cta {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -284,9 +244,12 @@ body:not(.search-results) article:not(.type-page) .entry-content {
 }
 .metaslider .caption a {
     background: $midblue;
-    padding: 20px;
+    padding: 10px;
     color: white;
     display: block;
+    line-height: 1.2;
+    font-size: 28px;
+    min-height: 105px;
 }
 .metaslider .caption a:before {
     content: '';
@@ -296,8 +259,43 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     position: absolute;
     left: 10px;
     top: 91px;
-
 }
 .metaslider .slides img {
     opacity: 0;
 }
+/*-----------------------------------------
+    sponsors
+-----------------------------------------*/
+#home-sponsors {
+    .elementor-tab-title {
+        background:$darkgrey;
+        color: white;
+        font-weight: 300;
+        font-family: 'Aller', sans-serif;
+        margin-bottom: 5px;
+    }
+    .elementor-tab-title:hover {
+        background:$darkblue;
+    }
+    .elementor-tab-title.active {
+        background:$green;
+    }
+    .elementor-widget-tabs .elementor-tabs-wrapper {
+        max-width: 20%;
+    }
+    .elementor-tab-content.elementor-clearfix {
+        padding: 0 20px;
+    }
+}
+.sponsors-tbl {
+    vertical-align: top;
+    border: none;
+    tr, td {
+        border: none;
+    }
+    td {
+        vertical-align: top;
+    }
+}
+
+

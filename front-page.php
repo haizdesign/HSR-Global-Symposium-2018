@@ -97,7 +97,7 @@ get_header(); ?>
         	</header><!-- .entry-header -->
 
         	<div class="entry-content">
-
+                <?php echo do_shortcode( '[INSERT_ELEMENTOR id=172]' ); ?>
         	</div><!-- .entry-content -->
 
         </article><!-- .home-sponsors -->

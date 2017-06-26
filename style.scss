@@ -175,6 +175,9 @@ a {
 3    Content
 --------------------------------------------------------------*/
 /* 3.1    Containers */
+.site-main {
+    position: relative;
+}
 section.testimonials {
     margin-bottom: 0;
 }
@@ -184,6 +187,47 @@ section.testimonials {
 }
 .content-area.home {
     width: 100%;
+}
+.header-badge {
+    background: $midblue;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    width: 25%;
+    position: absolute;
+    right: 0;
+    top: -10em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-top: 2px solid white;
+    z-index: 20;
+
+    h1 {
+        font-size: 20px;
+        position: relative;
+        z-index: 1;
+    }
+
+    span {
+        font-weight: 700;
+        font-size: 26px;
+    }
+}
+.header-badge:after {
+    content: '';
+    background: $midblue;
+    -webkit-transform-origin: bottom right;
+            transform-origin: bottom right;
+    -webkit-transform: skewY(-4deg);
+            transform: skewY(-4deg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 /* 3.2    Headings */
 h1, h2, h3, h4, h5, h6,
@@ -213,28 +257,27 @@ h1.entry-title {
     left: 100%;
 }
 /* 3.3    Text */
+
 /* 3.4    Images */
 .post-thumbnail {
     margin-top: -1.75em;
     overflow: hidden;
     max-height: 500px;
     position: relative;
+}
+.thumbnail-inner {
+    padding-left: 4.5455%;
+    width: 70%;
+    position: absolute;
+    bottom: 0;
+}
 
-    .thumbnail-inner {
-        margin: 0 auto;
-        max-width: 1320px;
-        padding-left: 10%;
-    }
-
-    .featured-caption {
-        position: absolute;
-        left: 0;
-        bottom: 1em;
-        z-index: 2;
-        color: white;
-        font-weight: 700;
-        font-size: 2.2em;
-    }
+.featured-caption {
+    z-index: 2;
+    color: white;
+    background:red;
+    font-weight: 700;
+    font-size: 2.2em;
 }
 .post-thumbnail img {
     width: 100vw;
@@ -243,7 +286,8 @@ h1.entry-title {
 /* Forms */
 button,
 .btn,
-a.btn {
+a.btn,
+.elementor-tab-title {
     color: white;
     background: $green;
     border-radius: 0;
@@ -262,7 +306,8 @@ a.btn:hover:after {
 }
 button:after,
 .btn:after,
-a.btn:after {
+a.btn:after,
+.elementor-tab-title.active :after {
     content: '';
     position: absolute;
     width: 1em;
@@ -277,6 +322,25 @@ a.btn:after {
     transform-origin: top;
     background: #8fc034;
 }
+.elementor-tab-title :after {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 100%;
+    right: 0;
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    -webkit-transform: skewY(-20deg);
+    transform: skewX(-20deg);
+    -webkit-transform-origin: right;
+    transform-origin: top;
+    background: white;
+}
+.elementor-widget-tabs.elementor-tabs-view-vertical .elementor-tabs-wrapper {
+    padding-right: 1em;
+}
+
 
 
 /*--------------------------------------------------------------

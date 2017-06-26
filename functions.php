@@ -6,7 +6,7 @@ function haizdesign_enqueue_styles() {
 
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'hsrglobal-style',
-        get_stylesheet_directory_uri() . '/style.min.css',
+        get_stylesheet_directory_uri() . '/style.css',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -55,5 +55,72 @@ function haizdesign_theme_setup() {
 }
 add_action( 'after_setup_theme', 'haizdesign_theme_setup' );
 
+// show featured images in dashboard
+add_image_size( 'haizdesign-admin-post-featured-image', 120, 120, false );
 
+// Add the posts and pages columns filter. They can both use the same function.
+add_filter('manage_posts_columns', 'haizdesign_add_post_admin_thumbnail_column', 2);
+add_filter('manage_pages_columns', 'haizdesign_add_post_admin_thumbnail_column', 2);
 
+// Add the column
+function haizdesign_add_post_admin_thumbnail_column($haizdesign_columns){
+    $haizdesign_columns['haizdesign_thumb'] = __('Featured Image');
+    return $haizdesign_columns;
+}
+
+// Let's manage Post and Page Admin Panel Columns
+add_action('manage_posts_custom_column', 'haizdesign_show_post_thumbnail_column', 5, 2);
+add_action('manage_pages_custom_column', 'haizdesign_show_post_thumbnail_column', 5, 2);
+
+// Here we are grabbing featured-thumbnail size post thumbnail and displaying it
+function haizdesign_show_post_thumbnail_column($haizdesign_columns, $haizdesign_id){
+    switch($haizdesign_columns){
+        case 'haizdesign_thumb':
+        if( function_exists('the_post_thumbnail') )
+            echo the_post_thumbnail( 'haizdesign-admin-post-featured-image' );
+        else
+            echo 'hmm... your theme doesn\'t support featured image...';
+        break;
+    }
+}
+
+// wrapper for featured images
+if ( ! function_exists( 'twentysixteen_post_thumbnail' ) ) :
+/**
+ * Displays an optional post thumbnail.
+ *
+ * Wraps the post thumbnail in an anchor element on index views, or a div
+ * element when on single views.
+ *
+ * Create your own twentysixteen_post_thumbnail() function to override in a child theme.
+ *
+ * @since Twenty Sixteen 1.0
+ */
+function twentysixteen_post_thumbnail() {
+    if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+        return;
+    }
+
+    if ( is_singular() ) :
+    ?>
+
+    <div class="post-thumbnail">
+        <?php
+        $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
+        $get_description = get_post(get_post_thumbnail_id())->post_excerpt;
+        if(!empty($get_description)){//If description is not empty show the div
+            echo '<div class="thumbnail-inner"><div class="featured-caption">' . $get_description . '</div></div>';
+            }
+        the_post_thumbnail();
+        ?>
+    </div><!-- .post-thumbnail -->
+
+    <?php else : ?>
+
+    <a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+        <?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
+    </a>
+
+    <?php endif; // End is_singular()
+}
+endif;

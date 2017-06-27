@@ -10,12 +10,16 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
+		<figure class="post-pg-thumb">
+			<?php the_post_thumbnail('medium-thumb'); ?>
+		</figure>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 
 	<?php twentysixteen_excerpt(); ?>
 
 	<div class="entry-content">
+
 		<?php
 			the_content();
 
@@ -28,24 +32,16 @@
 				'separator'   => '<span class="screen-reader-text">, </span>',
 			) );
 
-			if ( '' !== get_the_author_meta( 'description' ) ) {
-				get_template_part( 'template-parts/biography' );
+			// if ( '' !== get_the_author_meta( 'description' ) ) {
+			// 	get_template_part( 'template-parts/biography' );
+			// }
+			if(get_field('post_authors')) {
+				echo '<p class="post-authors">' . get_field('post_authors') . '</p>';
 			}
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php twentysixteen_entry_meta(); ?>
-		<?php
-			edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'twentysixteen' ),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
+
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

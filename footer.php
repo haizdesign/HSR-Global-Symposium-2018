@@ -10,10 +10,10 @@
 </div><!-- .site -->
 
         <section class="testimonials">
-            <article class="testimonial site-inner">
+            <div class="testimonial site-inner">
                 <p class="quote">One of the most refreshing elements has been the visibility of policymakers<br /> in the debates and sessions.</p>
 				<p>Qui omniatia quossum asin cuptibus</p>
-            </article>
+            </div>
         </section><!-- .testimonials -->
 
 		<footer id="colophon" class="site-footer" role="contentinfo">

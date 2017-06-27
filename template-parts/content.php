@@ -42,7 +42,7 @@
 			</div><!-- .entry-content -->
 			
 			<footer class="entry-footer">
-				<?php the_author(); ?>
+				<!-- <?php the_author(); ?> -->
 			</footer><!-- .entry-footer -->
 		</div><!-- .blog-text -->
 </article><!-- #post-## -->

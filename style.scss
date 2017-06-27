@@ -5,6 +5,7 @@
 2    Header
     2.1    Main navigation
     2.2    Social navigation
+    2.3    Post Navigation
 3    Content
     3.1    Containers
     3.2    Headings
@@ -39,6 +40,90 @@ body {
 a {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
+}
+button,
+.btn,
+a.btn,
+input[type="submit"],
+.elementor-tab-title {
+    color: white;
+    background: $green;
+    border-radius: 0;
+    font-family: 'Aller', Arial, sans-serif;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: 0.046875em;
+    line-height: 1;
+    padding: 0.84375em 0.875em 0.78125em;
+    position: relative;
+}
+button:hover,
+.btn:hover,
+.btn a:hover,
+button:hover:after,
+.btn:hover:after,
+a.btn:hover:after,
+input[type="submit"]:hover,
+input[type="submit"]:hover:after {
+    background: $darkblue;
+}
+button:after,
+.btn:after,
+a.btn:after,
+input[type="submit"]:after,
+.elementor-tab-title.active :after {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 100%;
+    right: 0;
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    -webkit-transform: skewY(-20deg);
+    transform: skewX(-20deg);
+    -webkit-transform-origin: right;
+    transform-origin: top;
+    background: #8fc034;
+}
+button.comments-link {
+    min-width: 180px;
+}
+button.comments-link a:link,
+button.comments-link a:visited {
+    color: white;
+}button.comments-link a:hover,
+button.comments-link a:active {
+    color: white;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+.elementor-tab-title :after {
+    content: '';
+    position: absolute;
+    width: 1em;
+    height: 100%;
+    right: 0;
+    top: 0;
+    left: 100%;
+    bottom: 0;
+    -webkit-transform: skewY(-20deg);
+    transform: skewX(-20deg);
+    -webkit-transform-origin: right;
+    transform-origin: top;
+    background: white;
+}
+.elementor-widget-tabs.elementor-tabs-view-vertical .elementor-tabs-wrapper {
+    padding-right: 1em;
+}
+a.more-link {
+    display: block;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+            margin-top: 2.5em;
+}
+.post-navigation a {
+    color: $green;
 }
 /*--------------------------------------------------------------
 2    Header
@@ -97,6 +182,9 @@ a {
     width: 0;
     height: 0;
     content: '';
+}
+.main-navigation .sub-menu .current-menu-item >a:after { /* hide it on sub menus */
+    border-bottom-color: transparent;
 }
 .main-navigation .current-menu-item.menu-item-has-children > a:after {
     padding-right: 0;
@@ -171,6 +259,12 @@ a {
     content: '\f211';
     font-family: 'genericons';
 }
+/* 2.3  Post Navigation */
+.post-navigation,
+.post-navigation div + div {
+    border-color: $lightgrey;
+}
+
 
 
 /*--------------------------------------------------------------
@@ -192,6 +286,11 @@ section.testimonials {
 }
 .content-area.home {
     width: 100%;
+}
+.content-area.full-width {
+    width: 100%;
+    margin-right: 0;
+    float: none;
 }
 .header-badge {
     background: $midblue;
@@ -240,6 +339,7 @@ section.testimonials {
         margin-top: 1em;
     }
 }
+
 /* 3.2    Headings */
 h1, h2, h3, h4, h5, h6,
 .entry-title,
@@ -247,7 +347,9 @@ h1, h2, h3, h4, h5, h6,
     font-family: 'Aller', arial, sans-serif;
     font-weight: 300;
 }
-h1.entry-title {
+h1.entry-title,
+.comments-title,
+.comment-reply-title {
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -267,7 +369,24 @@ h1.entry-title {
 .entry-title:after {
     left: 100%;
 }
+.single .entry-title:after {
+    display: none;
+}
+.post-navigation .post-title,
+.entry-title, .comments-title {
+    -webkit-hyphens: none;
+        -ms-hyphens: none;
+            hyphens: none;
+}
+.comments-title,
+.comment-reply-title {
+    border-color: $lightgrey;
+}
 /* 3.3    Text */
+p.post-authors {
+    padding: 1em;
+    background: $palegrey;
+}
 
 /* 3.4    Images */
 .post-thumbnail {
@@ -298,75 +417,68 @@ h1.entry-title {
         display: none;
     }
 }
+.post-pg-thumb {
+    margin-bottom: 1em;
+}
+.post-pg-thumb img {
+    width: 100%;
+}
 
 /* Forms */
-button,
-.btn,
-a.btn,
-.elementor-tab-title {
-    color: white;
-    background: $green;
-    border-radius: 0;
-    font-family: 'Aller', Arial, sans-serif;
-    font-weight: 300;
-    text-transform: none;
-    position: relative;
-}
-button:hover,
-.btn:hover,
-.btn a:hover,
-button:hover:after,
-.btn:hover:after,
-a.btn:hover:after {
-    background: $darkblue;
-}
-button:after,
-.btn:after,
-a.btn:after,
-.elementor-tab-title.active :after {
-    content: '';
-    position: absolute;
-    width: 1em;
-    height: 100%;
-    right: 0;
-    top: 0;
-    left: 100%;
-    bottom: 0;
-    -webkit-transform: skewY(-20deg);
-    transform: skewX(-20deg);
-    -webkit-transform-origin: right;
-    transform-origin: top;
-    background: #8fc034;
-}
-.elementor-tab-title :after {
-    content: '';
-    position: absolute;
-    width: 1em;
-    height: 100%;
-    right: 0;
-    top: 0;
-    left: 100%;
-    bottom: 0;
-    -webkit-transform: skewY(-20deg);
-    transform: skewX(-20deg);
-    -webkit-transform-origin: right;
-    transform-origin: top;
-    background: white;
-}
-.elementor-widget-tabs.elementor-tabs-view-vertical .elementor-tabs-wrapper {
-    padding-right: 1em;
-}
+
 /* 3.5  Blog */
 .blog article {
-    border: 1px solid $green;
     padding: 1em;
-    .entry-title a {
-        color: $green;
+    margin-bottom: 1em;
+    background: $palegrey;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    .entry-header {
+        -webkit-box-flex: 1;
+            -ms-flex: 1 0 100%;
+                flex: 1 0 100%;
+        .entry-title {
+            margin-bottom: 0.5em;
+        }
+    }
+    .entry-title a:link,
+    .entry-title a:visited {
+        color: $darkgrey;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .entry-title a:hover,
+    .entry-title a:active {
+        color: $midblue;
+    }
+    .blog-thumb {
+        margin-right: 2em;
+    }
+    .blog-text {
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
     }
 }
 .blog .entry-title:before,
 .blog .entry-title:after {
         border: none;
+}
+body:not(.search-results) article:not(.type-page) .entry-footer {
+    margin-top: 1em;
+}
+.blog .posted-on {
+    padding: 5px 10px;
+    background: $darkblue;
+    color: white;
+    text-align: right;
+    display: block;
+    a {
+        color: white;
+    }
 }
 
 

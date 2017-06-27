@@ -30,6 +30,7 @@ register_nav_menus( array(
 // Featured image sizes
 add_theme_support('post-thumbnails');
 add_image_size('small-thumb', 300, 200, true);
+add_image_size('medium-thumb', 640, 400, true);
 
 // Limit excerpt length
 function haizdesign_excerpt_length ($length) {
@@ -124,3 +125,10 @@ function twentysixteen_post_thumbnail() {
     <?php endif; // End is_singular()
 }
 endif;
+
+/**
+ * Custom template tags for this theme.
+ */
+require get_stylesheet_directory() . '/inc/template-tags.php';
+
+

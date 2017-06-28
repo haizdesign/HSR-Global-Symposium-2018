@@ -217,23 +217,25 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     border-top:4px solid $darkblue;
 }
 .metaslider {
-    margin-top: -5em;
+    margin-top: -7em;
 }
-.home-events .metaslider .caption-wrap {
+#main .home-events .metaslider .caption-wrap {
     opacity: 1;
     color: $darkblue;
     font-size: 2em;
     background: transparent;
     line-height: 3em;
     height: 200px;
+    position: relative;
 }
 .tribe_formatted_event_date:after {
     content: '\f111';
     font-family: 'fontawesome';
     position: absolute;
-    left: 1px;
-    bottom: 73px;
+    left: -9px;
+    bottom: -53px;
     font-size: 24px;
+    color: #1d61a2;
 }
 .home-events .metaslider li {
     width: 30%;
@@ -248,8 +250,9 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     color: white;
     display: block;
     line-height: 1.2;
-    font-size: 28px;
-    min-height: 105px;
+    font-size: 24px;
+    min-height: 80px;
+    width: 350px;
 }
 .metaslider .caption a:before {
     content: '';

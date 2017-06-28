@@ -20,6 +20,7 @@
 html, body {
     color: $darkgrey;
     background: white;
+    overflow-x: hidden;
 }
 @media screen and (min-width: 44.375em) {
     body:not(.custom-background-image):before,
@@ -346,6 +347,7 @@ h1, h2, h3, h4, h5, h6,
 .widget-title {
     font-family: 'Aller', arial, sans-serif;
     font-weight: 300;
+    text-transform: uppercase;
 }
 h1.entry-title,
 .comments-title,
@@ -371,6 +373,9 @@ h1.entry-title,
 }
 .single .entry-title:after {
     display: none;
+}
+.entry-content h4 {
+    letter-spacing: 0 !important;
 }
 .post-navigation .post-title,
 .entry-title, .comments-title {

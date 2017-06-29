@@ -11,8 +11,7 @@
 
         <section class="testimonials">
             <div class="testimonial site-inner">
-                <p class="quote">One of the most refreshing elements has been the visibility of policymakers<br /> in the debates and sessions.</p>
-				<p>Qui omniatia quossum asin cuptibus</p>
+                <p class="quote"><?php echo do_shortcode( '[testimonials limit=1 no_cache=true random=true paging=false]' ); ?></p>
             </div>
         </section><!-- .testimonials -->
 

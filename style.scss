@@ -6,10 +6,12 @@
     2.1    Main navigation
     2.2    Social navigation
     2.3    Post Navigation
+    2.4    Page Navigation Menus
 3    Content
     3.1    Containers
     3.2    Headings
     3.3    Text
+        3.3.1   Lists
     3.4    Images
     3.5    Blog
 4    Footer
@@ -268,7 +270,30 @@ a.more-link {
 .post-navigation div + div {
     border-color: $lightgrey;
 }
+/* 2.4  Page Navigation Menus */
+.page-menu ul {
+    list-style: none;
+    text-transform: uppercase;
 
+    li {
+        margin-bottom: 0.5em;
+        a {
+            background: $darkgrey;
+            padding: 5px 10px;
+            color: white;
+            display: block;
+        }
+        a:hover {
+            background: $green;
+        }
+    }
+}
+.anchor {
+    margin-top: 1em;
+}
+.anchor:focus {
+    outline: none;
+}
 
 
 /*--------------------------------------------------------------
@@ -395,6 +420,26 @@ h1.entry-title,
 p.post-authors {
     padding: 1em;
     background: $palegrey;
+}
+.testimonials blockquote {
+    border: none;
+}
+/* 3.3.1   Lists */
+.entry-content ul {
+    list-style: none;
+    padding-left: 2em;
+    li {
+        margin-left: -2em;
+        padding-left: 1.5em;
+        line-height: 1.6;
+    }
+    li:before {
+        content: '\f0da';
+        font-family: 'fontawesome';
+        color: $green;
+        padding-right: 1em;
+        margin-left: -1em;
+    }
 }
 
 /* 3.4    Images */

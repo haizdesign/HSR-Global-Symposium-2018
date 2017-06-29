@@ -204,7 +204,7 @@ mailchimp
 }
 /* events*/
 .home-keydates h1.entry-title {
-    margin-bottom: 2.2em;
+    margin-bottom: 3.2em;
 }
 /*--------------------------------------------------------------
     metaslider
@@ -215,6 +215,10 @@ body:not(.search-results) article:not(.type-page) .entry-content {
 }
 .home-events {
     border-top:4px solid $darkblue;
+}
+.home-events.entry-content:before {
+    margin-top: -7px;
+    content: '';
 }
 .metaslider {
     margin-top: -7em;
@@ -232,17 +236,21 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     content: '\f111';
     font-family: 'fontawesome';
     position: absolute;
-    left: -9px;
-    bottom: -53px;
+    left: 1px;
+    top: 33px;
     font-size: 24px;
     color: #1d61a2;
 }
 .home-events .metaslider li {
     width: 30%;
 }
-.home-events .metaslider .caption
- br {
-    height: 30px;
+.home-events .metaslider .caption {
+    position: absolute;
+    top: -115px;
+
+    br {
+        height: 30px;
+    }
 }
 .metaslider .caption a {
     background: $midblue;

@@ -1,8 +1,6 @@
 <?php
 /**
- * Template Name: Full Width Page
- *
- * This template has a full page width
+ * This is the default full width page template
  */
 
 get_header(); ?>

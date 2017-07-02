@@ -46,7 +46,7 @@
 				
 				<div class="obfuscator">
 				</div>        
-			</div>
+			</div><!-- /sliding--menu__wrapper -->
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main site-inner">

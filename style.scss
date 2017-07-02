@@ -336,6 +336,12 @@ a.more-link {
         }
     }
 }
+/* 2.5 Mobile Navigation */
+@media screen and (min-width: 700px) {
+    .sliding--menu__wrapper {
+        display: none;
+    }
+}
 .anchor {
     margin-top: 1em;
 }

@@ -28,6 +28,26 @@
 	<div class="outer">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 
+		<!-- mobile-menu -->
+		<div class="sliding--menu__wrapper">
+				<input type="checkbox" id="navigation" />        
+				<label id="hamburger--icon" for="navigation">
+					<span class="icon-menu"></span>
+				</label>      
+			
+				<nav>
+					<?php
+						wp_nav_menu( array(
+							'theme_location' => 'primary',
+							'menu_class'     => 'primary-menu',
+						) );
+					?>
+				</nav>
+				
+				<div class="obfuscator">
+				</div>        
+			</div>
+
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main site-inner">
 
@@ -47,8 +67,6 @@
 						?>
 					</nav><!-- .social-navigation -->
 				<?php endif; ?>
-
-					<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'twentysixteen' ); ?></button>
 
 					<div id="site-header-menu" class="site-header-menu">
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>

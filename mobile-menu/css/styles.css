@@ -27,7 +27,7 @@
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 910px) {
   header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -79,13 +79,13 @@
     display: block;
     font-weight: 700;
     width: 56px;
-    height: 56px;
-    line-height: 56px;
+    height: 102px;
+    line-height: 102px;
     color: #fff;
     text-align: center;
     font-size: 2em;
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     -webkit-transition: all 200ms ease-in;
     transition: all 200ms ease-in;
   }
@@ -128,6 +128,10 @@
 
   .menu-main-nav-container { /* move menu down */
       margin-top: 102px;
+  }
+  .sliding--menu__wrapper .sub-menu li:before,
+  .sliding--menu__wrapper .sub-menu li:after {
+    width: 0;
   }
 
 

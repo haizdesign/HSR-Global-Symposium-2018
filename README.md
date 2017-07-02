@@ -11,3 +11,4 @@ The Events Calendar
 Gravity Forms
 Metaslider Pro
 Elementor
+ShiftNav Pro

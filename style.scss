@@ -80,6 +80,7 @@ input[type="submit"]:hover:after {
 button:after,
 .btn:after,
 a.btn:after,
+:not(button.menu-toggle:after),
 input[type="submit"]:after,
 .elementor-tab-title.active :after {
     content: '';
@@ -137,6 +138,11 @@ a.more-link {
 }
 .breadcrumbs {
     margin-bottom: 1em;
+}
+@media screen and (max-width: 700px) {
+    .breadcrumbs {
+        margin-left: $margin-7;
+    }
 }
 /*--------------------------------------------------------------
 2    Header
@@ -242,6 +248,19 @@ a.more-link {
         color: white;
     }
 }
+.sub-menu li:before,
+.sub-menu li:after {
+    content: '';
+    position: absolute;
+    width: 9600px;
+    height: 42px;
+    background: $darkgrey;
+    right: 100%;
+}
+.sub-menu li:after {
+    left: 100%;
+    top: 0;
+}
 .menu-bg {
     background: $darkgrey;
     height: 180px;
@@ -283,6 +302,12 @@ a.more-link {
 }
 .social-navigation a[href*="youtube.com"]:before {
     content: '\f167';
+}
+.social-navigation a[href*="instagram.com"]:before {
+    content: '\f16d';
+}
+.social-navigation a[href*="linkedin.com"]:before {
+    content: '\f0e1';
 }
 .social-navigation a[href*="flickr.com"]:before {
     content: '\f211';

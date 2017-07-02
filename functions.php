@@ -53,6 +53,7 @@ function haizdesign_theme_setup() {
 	// override parent theme's 'more' text for excerpts
 	remove_filter( 'excerpt_more', 'twentysixteen_excerpt_more' );
 	remove_filter( 'get_the_excerpt', 'twentysixteen_excerpt_more' );
+    add_editor_style( array( '/editor-style.css', str_replace( ',', '%2C', $font_url ) ) );
 }
 add_action( 'after_setup_theme', 'haizdesign_theme_setup' );
 
@@ -130,5 +131,19 @@ endif;
  * Custom template tags for this theme.
  */
 require get_stylesheet_directory() . '/inc/template-tags.php';
+
+/* custom login screen */
+function haizdesign_loginpage_logo_link($url) {
+    return get_bloginfo('wpurl');
+}
+function haizdesign_loginpage_logo_title($message) {
+    return get_bloginfo('name');
+}
+function haizdesign_custom_login() {
+    echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/custom-login.css" />';
+}
+add_filter("login_headerurl","haizdesign_loginpage_logo_link");
+add_filter("login_headertitle","haizdesign_loginpage_logo_title");
+add_action('login_head', 'haizdesign_custom_login');
 
 

@@ -53,7 +53,8 @@ a:hover .banner-logo img {
 }
 button,
 .btn,
-a.btn,
+button.btn,
+a .btn,
 input[type="submit"],
 .elementor-tab-title {
     color: white;
@@ -68,18 +69,21 @@ input[type="submit"],
     position: relative;
 }
 button:hover,
-.btn:hover,
-.btn a:hover,
 button:hover:after,
+.btn:hover,
 .btn:hover:after,
-a.btn:hover:after,
+.btn a:hover,
+a .btn:hover:after,
+button.btn:hover,
+button.btn:hover:after,
 input[type="submit"]:hover,
 input[type="submit"]:hover:after {
     background: $darkblue;
 }
 button:after,
 .btn:after,
-a.btn:after,
+button.btn:after,
+a .btn:after,
 :not(button.menu-toggle:after),
 input[type="submit"]:after,
 .elementor-tab-title.active :after {

@@ -38,6 +38,9 @@
     float: right;
     width: 25%;
 }
+.subscribe.sidebar {
+    margin-bottom: 2em;
+}
 section {
     margin-bottom: 3em;
 }
@@ -137,6 +140,9 @@ section {
                 flex: 1 1 100%;
     }
 }
+article.home-box a.more-link {
+            margin-right: -2em;
+}
 @media  screen and (max-width: 700px) {
     .news-boxes {
         -webkit-box-orient: vertical;
@@ -234,7 +240,7 @@ mailchimp
     sidebar social nav
 --------------------------------------------------------------*/
 .sidebar .social-navigation {
-    margin-top: 2em;
+    margin-top: 3em;
     ul.social-links-menu {
         float: none;
         display: -webkit-box;
@@ -346,7 +352,6 @@ body:not(.search-results) article:not(.type-page) .entry-content {
         font-family: 'Aller', sans-serif;
         margin-bottom: 5px;
         padding: 20px 0 20px 7.6923%;
-        margin-left: -7.6923%;
     }
     .elementor-tab-title:hover {
         background:$darkblue;
@@ -380,6 +385,9 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     }
     #home-sponsors .elementor-tab-content.elementor-clearfix {
         padding: 0;
+    }
+    #home-sponsors .elementor-tab-title {
+        margin-left: -7.6923%;
     }
     .sponsors-tbl {
         tr {

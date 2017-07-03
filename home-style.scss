@@ -214,7 +214,7 @@ mailchimp
     }
     input.gform_button.button {
         position: absolute;
-        bottom: 0;
+        bottom: -35px;
         left: 0;
         background: $green;
         border-radius: 0;
@@ -229,11 +229,7 @@ mailchimp
     }
 
 }
-@media screen and (max-width: 700px) {
-    .gform_wrapper .gform_footer input[type="submit"] {
-        margin-top: 60px;
-    }
-}
+
 /*--------------------------------------------------------------
     sidebar social nav
 --------------------------------------------------------------*/
@@ -331,6 +327,14 @@ body:not(.search-results) article:not(.type-page) .entry-content {
 .metaslider .slides img {
     opacity: 0;
 }
+@media screen and max-width (600px) {
+    .home-events .metaslider .caption {
+        top: -95px;
+    }
+    .metaslider .caption a {
+        width: 240px;
+    }
+}
 /*-----------------------------------------
     sponsors
 -----------------------------------------*/
@@ -341,6 +345,8 @@ body:not(.search-results) article:not(.type-page) .entry-content {
         font-weight: 300;
         font-family: 'Aller', sans-serif;
         margin-bottom: 5px;
+        padding: 20px 0 20px 7.6923%;
+        margin-left: -7.6923%;
     }
     .elementor-tab-title:hover {
         background:$darkblue;
@@ -390,9 +396,10 @@ body:not(.search-results) article:not(.type-page) .entry-content {
                 -ms-flex: 1;
                     flex: 1;
             width: 90%;
+            padding-right: 7.6923%;
         }
         p {
-            font-size: 12px;
+            font-size: 14px;
         }
     }
 }

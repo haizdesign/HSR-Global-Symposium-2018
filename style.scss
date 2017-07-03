@@ -560,6 +560,13 @@ p.post-authors {
     }
 }
 @media screen and ( max-width: 600px ) {
+    .post-thumbnail {
+        margin-left: -7.6923%;
+        margin-right: -7.6923%;
+        img {
+            width: 100%;
+        }
+    }
     .featured-caption {
         display: none;
     }

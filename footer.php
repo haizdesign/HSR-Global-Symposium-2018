@@ -52,6 +52,14 @@
             </div><!-- .footer-wrap -->
 		</footer><!-- .site-footer -->
 
+	<?php
+    /**
+     * haizdesign_after_footer hook
+     * @hooked haizdesign_scrollup - 10
+     */
+    do_action( 'haizdesign_after_footer' );
+    ?>
+
 
 <?php wp_footer(); ?>
 </body>

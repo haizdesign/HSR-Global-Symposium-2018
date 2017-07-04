@@ -38,9 +38,7 @@
     float: right;
     width: 25%;
 }
-.subscribe.sidebar {
-    margin-bottom: 2em;
-}
+
 section {
     margin-bottom: 3em;
 }
@@ -51,6 +49,10 @@ section {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    .subscribe {
+        padding-bottom: 0em;
+        margin-bottom: 0;
+    }
 }
 .cta-boxes {
     display: -webkit-box;
@@ -128,7 +130,7 @@ section {
 
         button {
             /* display: block; */
-            width: calc(100% + 1em);
+            width: calc(100% - 1em);
             margin: 1em -1em 0;
             -ms-flex-item-align: end;
                 align-self: flex-end;
@@ -239,8 +241,8 @@ mailchimp
 /*--------------------------------------------------------------
     sidebar social nav
 --------------------------------------------------------------*/
-.sidebar .social-navigation {
-    margin-top: 3em;
+.subscribe .social-navigation {
+    padding-top: 0;
     ul.social-links-menu {
         float: none;
         display: -webkit-box;
@@ -249,6 +251,7 @@ mailchimp
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center;
+        padding-top: 4em;
         li {
             margin: 0 5px;
         }
@@ -333,9 +336,12 @@ body:not(.search-results) article:not(.type-page) .entry-content {
 .metaslider .slides img {
     opacity: 0;
 }
-@media screen and max-width (600px) {
+@media screen and (max-width: 600px) {
+    .home-events .metaslider li {
+        width: 330px;
+    }
     .home-events .metaslider .caption {
-        top: -95px;
+        top: -115px;
     }
     .metaslider .caption a {
         width: 240px;
@@ -378,6 +384,10 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     img {
         display: block;
     }
+}
+#home-sponsors * {
+    border: none !important;
+    border-color: transparent !important;
 }
 @media screen and (max-width: 700px) {
     .entry-content .elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated {

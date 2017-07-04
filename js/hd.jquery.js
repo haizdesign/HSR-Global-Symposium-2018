@@ -1,14 +1,4 @@
 jQuery(document).ready(function($) {
-    // alert('Working!')
-
-    // $('<div class="menu-bg"></div>').insertBefore('.primary-menu .sub-menu');
-    // $('.menu-bg').hide();
-    //
-    // $('.main-navigation ul li.menu-item-has-children').hover(function() {
-    //     $('.menu-bg').show()
-    // }, function() {
-    //     $('.menu-bg').delay(300).slideUp()
-    // });
 
     // in page scrolling menu
     var length = $('#content').height() - $('.page-menu').height() + $('#content').offset().top;
@@ -78,5 +68,29 @@ jQuery(document).ready(function($) {
 	      }
 	    }
 	  });
+
+	  // scroll to top
+	  $("#scrollup").hide();
+
+	$(function () {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 1000) {
+				$('#scrollup').fadeIn();
+			} else {
+				$('#scrollup').fadeOut();
+			}
+		});
+		$('#scrollup').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	});
+
+    //  styling on select items
+    $(function () {
+        $('select').selectric();
+    });
 
 });

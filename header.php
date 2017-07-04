@@ -75,6 +75,9 @@
 		<?php endif; ?>
 
 		<div id="content" class="site-content site-inner">
+		
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('topnav_sidebar') ) : endif; ?>
+
 		<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
     		<?php if(function_exists('bcn_display'))
 		    {

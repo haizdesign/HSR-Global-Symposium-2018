@@ -699,6 +699,10 @@ p.post-authors {
     }
 
 }
+.comment-form label {
+    font-family: $main-font;
+    letter-spacing: 0;
+}
 
 
 /* 3.5  Blog */
@@ -729,6 +733,9 @@ p.post-authors {
     }
     .blog-thumb {
         margin-right: 2em;
+        span.comments-link {
+            text-align: right;
+        }
     }
     .blog-text {
         -webkit-box-flex: 1;
@@ -754,6 +761,10 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
     a {
         color: white;
     }
+}
+.post-navigation .post-title {
+    font-family: $main-font;
+    font-weight: 300;
 }
 
 
@@ -886,6 +897,10 @@ span.footer-contacts {
 --------------------------------------------------------------*/
 .widget {
     border-top: none;
+}
+.widget .widget-title {
+    font-family: $main-font;
+    letter-spacing: 0;
 }
 /*--------------------------------------------------------------
 6    Elementor

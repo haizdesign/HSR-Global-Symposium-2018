@@ -7,24 +7,24 @@ body.login {
 }
 #login {
 	width: 100%;
-	margin-top: -8%;
+	margin-top: -5%;
 }
 #login h1 {
     background: #fff;
-    border-bottom: 15px solid #8fc034;
+    border-top: 8px solid #8fc034;
+    border-bottom: 8px solid #8fc034;
 }
 #login h1 a {
-	width: 480px;
-	height: 264px;
+	width: 380px;
+	height: 209px;
 	background: #fff url(images/logos/banner-logo.svg) no-repeat 50% center;
     padding: 15px 0;
     background-size: 320px 176px;
-    -webkit-transition: all 0.3s ease;
-    -webkit-transition: all 0.6s ease;
-    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
 }
 #login h1 a:hover {
-    background-size: 480px 264px;
+    background-size: 380px 209px;
 }
 #login .message {
 	display:none;

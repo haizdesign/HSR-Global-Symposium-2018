@@ -353,15 +353,15 @@ a.more-link {
 
 /* 2.5 Top Page Nav */
 .top-nav {
-    padding: 1em 0;
+    padding: 0.5em 4.5455%;
     font-size: 1em;
+    background: $darkgrey;
+    position: relative;
     ul {
         list-style: none;
         margin-left: 0;
         padding: 1em 0;
-        border-bottom: 2px solid $green;
         margin-bottom: 0;
-        position: relative;
     }
     li {
         display: block;
@@ -371,7 +371,7 @@ a.more-link {
     }
     a:link,
     a:visited {
-        color: $darkgrey;
+        color: white;
         padding: 0.65625em 0.875em;
         line-height: 1.3125;
         white-space: nowrap;
@@ -387,22 +387,13 @@ a.more-link {
         color: $green;
     }
 }
-.top-nav ul:before,
-.top-nav ul:after {
-    content: '';
-    position: absolute;
-    width: 9600px;
-    border-bottom: 2px solid $green;
-    right: 100%;
-    bottom: -2px;
-}
-.top-nav ul:after {
-    left: 100%;
-}
+.top-nav:before,
 .top-nav:after {
     content: '';
-    display: table;
-    clear: both;
+    background: $darkgrey;
+    position: absolute;
+    right: 100%;
+    width: 9600px;
 }
 
 .anchor {
@@ -592,6 +583,7 @@ p.post-authors {
     overflow: hidden;
     max-height: 500px;
     position: relative;
+    background: $darkgrey;
 }
 .thumbnail-inner {
     padding-left: 4.5455%;
@@ -604,14 +596,20 @@ p.post-authors {
     color: white;
     font-weight: 700;
     font-size: 2.2em;
+    text-shadow: 1px 2px 0 black;
 }
 .post-thumbnail img {
     width: 100vw;
     z-index: 1;
 }
-@media screen and (min-width: 960px) and (max-width: 1280px) {
+@media screen and (min-width: 960px) and (max-width: 1380px) {
     .post-thumbnail {
         max-height: 360px;
+    }
+}
+@media screen and (max-width: 1380px) {
+    .featured-caption {
+        font-size: 1.8em;
     }
 }
 @media screen and ( max-width: 600px ) {
@@ -719,14 +717,14 @@ p.post-authors {
             -ms-flex: 1 0 100%;
                 flex: 1 0 100%;
         .entry-title {
+            font-size: 1.8em;
             margin-bottom: 0.5em;
         }
     }
     .entry-title a:link,
     .entry-title a:visited {
         color: $darkgrey;
-        font-weight: 700;
-        text-transform: uppercase;
+        font-weight: 300;
     }
     .entry-title a:hover,
     .entry-title a:active {

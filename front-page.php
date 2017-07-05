@@ -53,11 +53,11 @@ get_header(); ?>
         <!-- Updates/blog -->
         <article class="home-updates">
         	<header class="entry-header">
-        		<h1 class="entry-title">Updates</h1>
+        		<h1 class="entry-title">News &amp; opinion</h1>
                 <section class="home-news">
                     <div class="news-boxes content-area home">
                             <?php
-                                $homenews = new WP_Query('posts_per_page = 3');
+                                $homenews = new WP_Query('posts_per_page=3');
 
                                 while($homenews -> have_posts()) : $homenews -> the_post();
                             ?>

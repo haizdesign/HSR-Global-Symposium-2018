@@ -34,7 +34,7 @@ function header_widgets_init() {
         'name' => 'Top Page Navigation',
         'description' => 'Leave this blank and add your menu on the editor page',
         'id' => 'topnav_sidebar',
-        'before_widget' => '<div class="top-nav">',
+        'before_widget' => '<div class="top-nav site-inner">',
         'after_widget' => '</div>',
     ) );
 }
@@ -122,6 +122,9 @@ function twentysixteen_post_thumbnail() {
     ?>
 
     <div class="post-thumbnail">
+    <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('topnav_sidebar') ) : endif;
+    ?>
+
         <?php
         $backgroundImg = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
         $get_description = get_post(get_post_thumbnail_id())->post_excerpt;

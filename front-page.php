@@ -10,7 +10,7 @@ get_header(); ?>
         <div class="header-badge">
                 <h1>Join us in<br>
                 <span>Liverpool</span><br>
-                7-12 October 2018</h1>
+                8-12 October 2018</h1>
         </div>
         <!-- Home CTAs -->
         <section class="home-cta">

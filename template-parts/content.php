@@ -10,7 +10,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<figure class="blog-thumb">
-		<?php the_post_thumbnail('small-thumb'); ?>
+		<a href="<?php the_permalink(); ?>">
+			<?php the_post_thumbnail('small-thumb'); ?>
+		</a>
 		<?php twentysixteen_entry_date(); ?>
 		<?php twentysixteen_entry_meta(); ?>
 	</figure>
@@ -39,10 +41,12 @@
 						'separator'   => '<span class="screen-reader-text">, </span>',
 					) );
 				?>
+				
 			</div><!-- .entry-content -->
 			
 			<footer class="entry-footer">
 				<!-- <?php the_author(); ?> -->
 			</footer><!-- .entry-footer -->
 		</div><!-- .blog-text -->
+		
 </article><!-- #post-## -->

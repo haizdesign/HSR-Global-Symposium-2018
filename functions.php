@@ -16,7 +16,8 @@ function haizdesign_enqueue_styles() {
     }
     wp_enqueue_style('selectricstyles', get_stylesheet_directory_uri() . '/inc/selectric.css' );
     wp_enqueue_script('selectric', get_stylesheet_directory_uri() . '/js/jquery.selectric.min.js' );
-    wp_enqueue_script('hdjquery', get_stylesheet_directory_uri() . '/js/hd.jquery.js', array(jquery), '160617', true);
+    wp_enqueue_script('haizdesign-jquery', get_stylesheet_directory_uri() . '/js/hd.jquery.js', array(jquery), '160617', true);
+    wp_enqueue_script( 'haizdesign-search', get_template_directory_uri() . '/js/hide-search.js', array(), '060717', true );
 }
 // add some more stuff here
 add_action( 'wp_enqueue_scripts', 'haizdesign_enqueue_styles' );
@@ -40,7 +41,6 @@ function header_widgets_init() {
 }
 
 add_action( 'widgets_init', 'header_widgets_init' );
-
 
 // Featured image sizes
 add_theme_support('post-thumbnails');
@@ -170,4 +170,64 @@ add_filter("login_headerurl","haizdesign_loginpage_logo_link");
 add_filter("login_headertitle","haizdesign_loginpage_logo_title");
 add_action('login_head', 'haizdesign_custom_login');
 
+//  keynote speakers cpt
+if ( ! function_exists('speakers_post_type') ) {
 
+// Register Custom Post Type
+    add_action( 'init', 'speakers_post_type', 0 );
+
+    function speakers_post_type() {
+        $labels = array(
+            'name'                  => 'Keynote Speakers',
+            'singular_name'         => 'Keynote Speaker',
+            'menu_name'             => 'Keynote Speakers',
+            'name_admin_bar'        => 'Keynote Speakers',
+            'archives'              => 'Speaker Archives',
+            'attributes'            => 'Speaker Attributes',
+            'parent_item_colon'     => 'Parent Speaker:',
+            'all_items'             => 'All Speakers',
+            'add_new_item'          => 'Add New Speaker',
+            'add_new'               => 'Add New Speaker',
+            'new_item'              => 'New Speaker',
+            'edit_item'             => 'Edit Speaker',
+            'update_item'           => 'Update Speaker',
+            'view_item'             => 'View Speaker',
+            'view_items'            => 'View Speakers',
+            'search_items'          => 'Search Speakers',
+            'not_found'             => 'Not found',
+            'not_found_in_trash'    => 'Not found in Trash',
+            'featured_image'        => 'Featured Image',
+            'set_featured_image'    => 'Set featured image',
+            'remove_featured_image' => 'Remove featured image',
+            'use_featured_image'    => 'Use as featured image',
+            'insert_into_item'      => 'Insert into speaker',
+            'uploaded_to_this_item' => 'Uploaded to this speaker',
+            'items_list'            => 'Speakers list',
+            'items_list_navigation' => 'Speakers list navigation',
+            'filter_items_list'     => 'Filter speakers list',
+        );
+        $args = array(
+            'label'                 => 'Keynote Speaker',
+            'description'           => 'Keynote Speakers',
+            'labels'                => $labels,
+            'supports'              => array( 'title', 'editor', 'excerpt', 'custom-fields', ),
+            'taxonomies'            => array( 'category', 'post_tag' ),
+            'hierarchical'          => true,
+            'public'                => true,
+            'show_ui'               => true,
+            'show_in_menu'          => true,
+            'menu_position'         => 5,
+            'menu_icon'             => 'dashicons-megaphone',
+            'show_in_admin_bar'     => true,
+            'show_in_nav_menus'     => true,
+            'can_export'            => true,
+            'has_archive'           => true,        
+            'exclude_from_search'   => false,
+            'publicly_queryable'    => true,
+            'capability_type'       => 'page',
+        );
+        register_post_type( 'keynote_speakers', $args );
+
+    }
+
+}

@@ -37,6 +37,7 @@
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="hsr2018 Global symposium on Health Systems Research"><figure class="banner-logo"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logos/banner-logo.svg" width="175" height="100" /></figure></a>
 				</div><!-- .site-branding -->
 
+
 				<?php if ( has_nav_menu( 'social' ) ) : ?>
 					<nav id="social-navigation" class="social-navigation" role="navigation">
 						<?php
@@ -49,6 +50,11 @@
 						?>
 					</nav><!-- .social-navigation -->
 				<?php endif; ?>
+
+				<div class="search-toggle">
+                            <i class="fa fa-search"></i>
+                            <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'haizdesign' ); ?></a>
+                        </div>
 
 					<div id="site-header-menu" class="site-header-menu">
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -67,6 +73,12 @@
 			</div><!-- .site-header-main -->
 
 		</header><!-- .site-header -->
+
+		<div id="header-search-container" class="search-box-wrapper clear hide">
+		    <div class="search-box clear">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
 
 		<?php
 			if ( is_page() ) : ?>

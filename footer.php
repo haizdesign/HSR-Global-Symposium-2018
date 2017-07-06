@@ -4,7 +4,11 @@
  *
  */
 ?>
-
+		<?php if (get_field('photo_credits')) : ?>
+			<section class="photo-credits">
+				<?php the_field('photo_credits'); ?>
+			</section>
+		<?php endif; ?>
 		</div><!-- .site-content -->
     </div><!-- .outer -->
 </div><!-- .site -->
@@ -41,16 +45,29 @@
 			                    ) );
 			                ?>
 			            </nav><!-- .social-navigation -->
-						<span class="footer-contacts">info@healthsystemsglobal.org<br>
-						+44 01234 567 890</span>
+						<span class="footer-contacts">
+							<a href="mailto:info@healthsystemsglobal.org">info@healthsystemsglobal.org</a></span>
                     </div><!-- .extras-r1 -->
 
                     <div class="extras-r2 site-details">
-                        <span class="footer-info">Health Systems Global organizes a symposium every two years to bring together its members with the full range of players involved in health systems and policy research. There is currently no other international gathering that serves the needs of this community.</span>
+                        <span class="footer-info"><a href="http://www.healthsystemsglobal.org/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/hsg-logo.png" /></a>Health Systems Global organizes a symposium every two years to bring together its members with the full range of players involved in health systems and policy research. There is currently no other international gathering that serves the needs of this community.</span>
                     </div><!-- .site-info -->
                 </div><!-- .footer-extras -->
             </div><!-- .footer-wrap -->
 		</footer><!-- .site-footer -->
+		<footer id="credits" class="site-footer credits" role="link">
+		<div class="site-info">
+			<?php do_action( 'haizdesign_credits' ); ?>
+			<div class="copyright">
+			<?php
+			printf(
+				/* translators: %s = text link: WordPress, URL: http://wordpress.org/ */
+				__( 'All content &copy; %1$s', 'haizdesign' ),
+				'<a href="' .esc_url( home_url('/') ) . '" rel="generator">' . esc_attr__( 'HSR Global', 'haizdesign' ) . '</a>'
+				); echo '&nbsp;' . date('Y'); ?>
+			</div>
+		</div><!-- .site-info -->
+	</footer><!-- #credits -->
 
 	<?php
     /**

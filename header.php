@@ -28,7 +28,11 @@
 	<div class="outer">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
 
-
+		<div id="header-search-container" class="search-box-wrapper clear hide">
+		    <div class="search-box clear">
+				<?php get_search_form(); ?>
+			</div>
+		</div>
 
 		<header id="masthead" class="site-header" role="banner">
 			<div class="site-header-main site-inner">
@@ -51,10 +55,10 @@
 					</nav><!-- .social-navigation -->
 				<?php endif; ?>
 
-				<div class="search-toggle">
-                            <i class="fa fa-search"></i>
-                            <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'haizdesign' ); ?></a>
-                        </div>
+					<div class="search-toggle">
+                        <i class="fa fa-search"></i>
+                        <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'haizdesign' ); ?></a>
+                    </div>
 
 					<div id="site-header-menu" class="site-header-menu">
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -73,12 +77,6 @@
 			</div><!-- .site-header-main -->
 
 		</header><!-- .site-header -->
-
-		<div id="header-search-container" class="search-box-wrapper clear hide">
-		    <div class="search-box clear">
-				<?php get_search_form(); ?>
-			</div>
-		</div>
 
 		<?php
 			if ( is_page() ) : ?>

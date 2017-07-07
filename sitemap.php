@@ -38,7 +38,7 @@ get_header(); ?>
             <h3 class="sitemap-pages">Published Web Pages:</h3>
             <div class="col pages">
                 <ul>
-                    <?php wp_list_pages('title_li=&post_status=publish&exclude=8967'); ?>
+                    <?php wp_list_pages('title_li=&post_status=publish&exclude=151'); ?>
                 </ul>
                 <h3>Archives by Tag:</h3>
                 <?php wp_tag_cloud(); ?>

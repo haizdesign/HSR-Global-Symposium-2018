@@ -35,18 +35,7 @@ get_header(); ?>
                 <div class="mailchimp-form">
                     <?php gravity_form( 1, $display_title = false, $display_description = true, $display_inactive = false, $field_values = null, $ajax = false, $tabindex, $echo = true ); ?>
                 </div>
-                <?php if ( has_nav_menu( 'social' ) ) : ?>
-					<nav id="social-navigation" class="social-navigation" role="navigation">
-						<?php
-							wp_nav_menu( array(
-								'theme_location' => 'social',
-								'menu_class'     => 'social-links-menu',
-								'link_before'    => '<span class="screen-reader-text">',
-								'link_after'     => '</span>',
-							) );
-						?>
-					</nav><!-- .social-navigation -->
-				<?php endif; ?>
+                
             </div><!-- .home-subscribe -->
         </section>
 
@@ -62,9 +51,11 @@ get_header(); ?>
                                 while($homenews -> have_posts()) : $homenews -> the_post();
                             ?>
                             <article class="home-box">
-                                <figure class="image">
-                                    <?php the_post_thumbnail('small-thumb'); ?>
-                                </figure>
+                                <a href="<?php the_permalink(); ?>">
+                                    <figure class="image">
+                                        <?php the_post_thumbnail('small-thumb'); ?>
+                                    </figure>
+                                </a>
                                 <a href="<?php the_permalink(); ?>"><h1 class="home-post-title"><?php the_title(); ?></h1></a>
                                 <?php the_excerpt(); ?>
                             </article>
@@ -72,6 +63,9 @@ get_header(); ?>
                         <?php wp_reset_postdata(); ?>
                     </div><!-- .news-boxes -->
                 </section>
+                <a href="<?php bloginfo('url'); ?>/blog">
+                    <button>Read more news and opinions</button>
+                </a>
         	</header><!-- .entry-header -->
 
         	<div class="entry-content">

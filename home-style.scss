@@ -17,6 +17,7 @@
                 flex: 1 1 100%;
         li {
             margin: 10px;
+            margin-left: 0;
         }
     }
 }
@@ -121,10 +122,6 @@ section {
             }
         }
 
-        p {
-            margin-bottom: -1em;
-        }
-
         button {
             /* display: block; */
             width: calc(100% - 1em);
@@ -140,7 +137,7 @@ section {
     }
 }
 article.home-box a.more-link {
-            margin-right: -2em;
+            display: none;
 }
 @media  screen and (max-width: 700px) {
     .news-boxes {
@@ -262,6 +259,9 @@ mailchimp
     }
 }
 /* events*/
+article.home-keydates {
+    margin-top: 2em;
+}
 .home-keydates h1.entry-title {
     margin-bottom: 3.2em;
 }
@@ -272,76 +272,26 @@ body:not(.search-results) article:not(.type-page) .entry-content {
     width: 100%;
     float: none;
 }
-.home-events {
-    border-top:4px solid $darkblue;
-}
+
 .home-events.entry-content:before {
     margin-top: -7px;
     content: '';
 }
+article.home-keydates {
+    padding: 2em 0;
+}
 .metaslider {
-    margin-top: -7em;
+    margin-top: -2em;
+    padding-bottom: 2em;
 }
-#main .home-events .metaslider .caption-wrap {
-    opacity: 1;
-    color: $darkblue;
-    font-size: 2em;
-    background: transparent;
-    line-height: 3em;
-    height: 200px;
-    position: relative;
-}
-.tribe_formatted_event_date:after {
-    content: '\f111';
-    font-family: 'fontawesome';
-    position: absolute;
-    left: 1px;
-    top: 33px;
-    font-size: 24px;
-    color: #1d61a2;
-}
+
 .home-events .metaslider li {
     width: 30%;
 }
-.home-events .metaslider .caption {
-    position: absolute;
-    top: -115px;
 
-    br {
-        height: 30px;
-    }
-}
-.metaslider .caption a {
-    background: $midblue;
-    padding: 10px;
-    color: white;
-    display: block;
-    line-height: 1.2;
-    font-size: 24px;
-    min-height: 80px;
-    width: 350px;
-}
-.metaslider .caption a:before {
-    content: '';
-    border-top: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-left: 10px solid $midblue;
-    position: absolute;
-    left: 10px;
-    top: 91px;
-}
-.metaslider .slides img {
-    opacity: 0;
-}
 @media screen and (max-width: 600px) {
     .home-events .metaslider li {
         width: 330px;
-    }
-    .home-events .metaslider .caption {
-        top: -115px;
-    }
-    .metaslider .caption a {
-        width: 240px;
     }
 }
 /*-----------------------------------------

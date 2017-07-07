@@ -15,7 +15,7 @@
 
         <section class="testimonials">
             <div class="testimonial site-inner">
-                <p class="quote"><?php echo do_shortcode( '[testimonials limit=1 no_cache=true random=true paging=false]' ); ?></p>
+                <p class="quote"><?php echo do_shortcode( '[testimonials limit=1 no_cache=true random=true paging=false hide_source=false]' ); ?></p>
             </div>
         </section><!-- .testimonials -->
 
@@ -62,9 +62,9 @@
 			<?php
 			printf(
 				/* translators: %s = text link: WordPress, URL: http://wordpress.org/ */
-				__( 'All content &copy; %1$s', 'haizdesign' ),
-				'<a href="' .esc_url( home_url('/') ) . '" rel="generator">' . esc_attr__( 'HSR Global', 'haizdesign' ) . '</a>'
-				); echo '&nbsp;' . date('Y'); ?>
+				__( '&copy; %1$s', 'haizdesign' ),
+				date('Y') . '&nbsp;<a href="' .esc_url( home_url('/') ) . '" rel="generator">' . esc_attr__( 'Health Systems Global', 'haizdesign' ) . '</a>.<br>Developed by <a href="https://haizdesign.com">Haiz Design</a>, and designed by <a href="http://veryownstudio.com/">Very Own Studio</a>, based on branding design by <a href="http://www.fruit-design.co.uk/">Fruit Design</a>.'
+				); ?>
 			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #credits -->

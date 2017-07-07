@@ -20,6 +20,7 @@
     3.5    Blog
 4   Footer
 5   Widgets
+    5.1     Metaslider
 6   Elementor
 7   Scrollup
 --------------------------------------------------------------*/
@@ -317,6 +318,7 @@ a.more-link {
 @media screen and (min-width: 56.875em) {
     .site-header .social-navigation {
         display: block;
+        margin-top: -2em;
     }
 }
 .social-navigation a:before {
@@ -362,6 +364,11 @@ a.more-link {
         a:hover {
             background: $green;
         }
+    }
+}
+@media screen and (max-width: 720px) {
+    #menu-who-we-are-side-nav {
+        display: none !important;
     }
 }
 
@@ -424,6 +431,7 @@ a.more-link {
     width: 40px;
     height: 40px;
     padding: 0;
+    margin-top: -1.7em;
     margin-right: 0;
     color: $green;
     text-align: center;
@@ -874,6 +882,7 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
     }
     blockquote {
         color: $darkblue;
+        padding-bottom: 0;
         p {
             padding-top: 30px;
             text-align: left;
@@ -888,6 +897,16 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
         .close-quote {
             display: none;
         }
+    }
+.testimonials-widget-testimonial cite,
+.testimonials-widget-testimonial div.credit {
+        margin-top: -1em;
+        text-align: center;
+        line-height: 0;
+    }
+.testimonials-widget-testimonial cite:before,
+.testimonials-widget-testimonial div.credit:before {
+        content: '';
     }
 }
 .site-footer a:link,
@@ -992,7 +1011,7 @@ ul.footer-menu {
 .footer-info a img {
     float: left;
     width: 160px;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 .site-info {
     position: relative;
@@ -1009,6 +1028,15 @@ ul.footer-menu {
     font-family: $main-font;
     letter-spacing: 0;
 }
+/* 5.1  Metaslider */
+.entry-content #metaslider_135.flexslider .slides li {
+    margin-right: 0 !important;
+}
+.metaslider .flexslider .flex-direction-nav .flex-prev,
+.metaslider .flexslider .flex-direction-nav .flex-next {
+    margin-top: -15px !important;
+}
+
 /*--------------------------------------------------------------
 6    Elementor
 --------------------------------------------------------------*/

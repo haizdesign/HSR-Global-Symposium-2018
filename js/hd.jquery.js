@@ -88,11 +88,6 @@ jQuery(document).ready(function($) {
 		});
 	});
 
-    //  styling on select items
-    $(function () {
-        $('select').selectric();
-    });
-
     /* 
     * Toggles search on and off
     */

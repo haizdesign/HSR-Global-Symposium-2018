@@ -295,9 +295,10 @@ a.more-link {
     margin-top: 2px;
     border-bottom: none;
     visibility: hidden;
+    z-index: 99999;
 }
 .main-navigation .sub-menu li { 
-    display: inline-block;
+    display: block;
     float: left;
     border: none;
     position: static;
@@ -305,8 +306,6 @@ a.more-link {
 .main-navigation ul .sub-menu li a {
     width: auto;
 }
-
-
 .sub-menu li:before,
 .sub-menu li:after {
      content: '';
@@ -320,14 +319,7 @@ a.more-link {
      left: 100%;
      top: 0;
 }
-/* .menu-bg {*/
-/*     background: $darkgrey;*/
-/*     height: 180px;*/
-/*     width: 100vw;*/
-/*     position: absolute;*/
-/*     left: -50vw;*/
-/*     z-index: 1;*/
-/* }*/
+
 /* 2.2    Social navigation */
 .social-links-menu {
     list-style: none;
@@ -408,7 +400,7 @@ a.more-link {
     font-size: 1em;
     background: $darkgrey;
     position: relative;
-    z-index: 99998;
+    z-index: 9999;
     ul {
         list-style: none;
         margin-bottom: 0;
@@ -416,7 +408,6 @@ a.more-link {
     }
     li {
         display: inline-block;
-        margin-top: -1em;
         margin-right: 1em;
     }
     a:link,

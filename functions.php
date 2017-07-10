@@ -14,10 +14,8 @@ function haizdesign_enqueue_styles() {
     if (is_front_page) {
         wp_enqueue_style( 'homestyles', get_stylesheet_directory_uri(). '/home-style.css' );
     }
-    wp_enqueue_style('selectricstyles', get_stylesheet_directory_uri() . '/inc/selectric.css' );
-    wp_enqueue_script('selectric', get_stylesheet_directory_uri() . '/js/jquery.selectric.min.js' );
     wp_enqueue_script('haizdesign-jquery', get_stylesheet_directory_uri() . '/js/hd.jquery.js', array(jquery), '160617', true);
-    wp_enqueue_script( 'haizdesign-search', get_template_directory_uri() . '/js/hide-search.js', array(), '060717', true );
+    wp_enqueue_script( 'haizdesign-search', get_stylesheet_directory_uri() . '/js/hide-search.js', array(), '060717', true );
 }
 // add some more stuff here
 add_action( 'wp_enqueue_scripts', 'haizdesign_enqueue_styles' );

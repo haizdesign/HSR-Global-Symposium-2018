@@ -87,6 +87,7 @@ section {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
+    margin-bottom: 1em;
 }
 .news-boxes {
     display: -webkit-box;
@@ -111,7 +112,7 @@ section {
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-
+    
         .image {
             margin: -1em -1em 1em;
             background-size: cover;
@@ -135,6 +136,9 @@ section {
             -ms-flex: 1 1 100%;
                 flex: 1 1 100%;
     }
+}
+.news-boxes .home-box:first-of-type {
+    margin-left: 0;
 }
 article.home-box a.more-link {
             display: none;

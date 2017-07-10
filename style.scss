@@ -213,6 +213,9 @@ a.more-link {
 .main-navigation {
     font-family: $main-font;
 }
+.main-navigation li { /* horizontal sub menu setup */
+    position: static;
+}
 .main-navigation a {
     color: $darkgrey;
 }
@@ -260,6 +263,8 @@ a.more-link {
 .main-navigation li:hover > ul,
 .main-navigation li.focus > ul { /* centres the sub menu */
     right: auto;
+    left: 0;
+    visibility: visible;
 }
 .main-navigation ul ul:after { /* hides the 2016 top border cover */
     border: none;
@@ -282,36 +287,39 @@ a.more-link {
     }
 }
 .main-navigation ul.sub-menu {
-    width: 100%;
+    width: auto;
     display: block;
     position: absolute;
     left: 0;
-    height: 40px;
-    line-height: 40px;
+    top: 42px;
     margin-top: 2px;
-    background-color: black;
-    /* visibility: hidden;*/
+    border-bottom: none;
+    visibility: hidden;
 }
-.main-navigation ul .sub-menu li {
+.main-navigation .sub-menu li { 
     display: inline-block;
     float: left;
-    background-color: #00f;
+    border: none;
+    position: static;
+}
+.main-navigation ul .sub-menu li a {
+    width: auto;
 }
 
 
-/* .sub-menu li:before,*/
-/* .sub-menu li:after {*/
-/*     content: '';*/
-/*     position: absolute;*/
-/*     width: 9600px;*/
-/*     height: 42px;*/
-/*     background: $darkgrey;*/
-/*     right: 100%;*/
-/* }*/
-/* .sub-menu li:after {*/
-/*     left: 100%;*/
-/*     top: 0;*/
-/* }*/
+.sub-menu li:before,
+.sub-menu li:after {
+     content: '';
+     position: absolute;
+     width: 9600px;
+     height: 42px;
+     background: $darkgrey;
+     right: 100%;
+}
+.sub-menu li:after {
+     left: 100%;
+     top: 0;
+}
 /* .menu-bg {*/
 /*     background: $darkgrey;*/
 /*     height: 180px;*/
@@ -400,15 +408,14 @@ a.more-link {
     font-size: 1em;
     background: $darkgrey;
     position: relative;
+    z-index: 99998;
     ul {
         list-style: none;
-        margin-left: 0;
-        padding: 1em 0;
         margin-bottom: 0;
+        text-align: center;
     }
     li {
-        display: block;
-        float: left;
+        display: inline-block;
         margin-top: -1em;
         margin-right: 1em;
     }
@@ -680,7 +687,7 @@ p.post-authors {
         font-family: 'fontawesome';
         color: $green;
         padding-right: 1em;
-        margin-left: -1em;
+        margin-left: -1.4em;
     }
 }
 .entry-content ul.menu li:before {
@@ -809,7 +816,6 @@ p.post-authors {
         background: $green;
         border-radius: 0;
         font-weight: 300;
-        text-transform: capitalize;
     }
     .gform_wrapper .gform_footer input.button,
     .gform_wrapper .gform_footer input[type=submit],
@@ -853,6 +859,7 @@ p.post-authors {
     }
     .blog-thumb {
         margin-right: 2em;
+        span.cat-links,
         span.comments-link {
             text-align: right;
         }
@@ -905,6 +912,7 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
     blockquote {
         color: $darkblue;
         padding-bottom: 0;
+        margin-bottom: 0;
         p {
             padding-top: 30px;
             text-align: left;
@@ -914,7 +922,8 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
             font-size: 5em;
             float: left;
             margin-right: 15px;
-            margin-top: -30px;
+            margin-top: -12px;
+            line-height: 1;
         }
         .close-quote {
             display: none;
@@ -922,7 +931,6 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
     }
 .testimonials-widget-testimonial cite,
 .testimonials-widget-testimonial div.credit {
-        margin-top: -1em;
         text-align: center;
         line-height: 0;
     }
@@ -1064,6 +1072,9 @@ ul.footer-menu {
 --------------------------------------------------------------*/
 .elementor-column-gap-default>.elementor-row>.elementor-column>.elementor-element-populated {
     padding: 0;
+}
+.entry-content .elementor hr {
+    background-color: $lightgrey;
 }
 /*--------------------------------------------------------------
 7   Scrollup

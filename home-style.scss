@@ -132,9 +132,9 @@ section {
         }
     }
     .home-box > * {
-        -webkit-box-flex: 1;
-            -ms-flex: 1 1 100%;
-                flex: 1 1 100%;
+        // -webkit-box-flex: 1;
+        /*     -ms-flex: 1 1 100%;*/
+        /*         flex: 1 1 100%;*/
     }
 }
 .news-boxes .home-box:first-of-type {

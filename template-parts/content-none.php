@@ -10,7 +10,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title"><?php _e( 'Nothing Found', 'twentysixteen' ); ?></h1>
+		<h1 class="page-title"><?php _e( '404 - Nothing Found', 'twentysixteen' ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">
@@ -20,7 +20,7 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'twentysixteen' ); ?></p>
+			<p><?php _e( 'Sorry, but nothing matched your search terms. Check out some of the recent articles below or try again with some different keywords.', 'twentysixteen' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
@@ -29,5 +29,26 @@
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
+		<section class="home-news">
+            <div class="news-boxes content-area home">
+                    <?php
+                        $homenews = new WP_Query('posts_per_page=3');
+
+                        while($homenews -> have_posts()) : $homenews -> the_post();
+                    ?>
+                    <article class="home-box">
+                        <a href="<?php the_permalink(); ?>">
+                            <figure class="image">
+                                <?php the_post_thumbnail('small-thumb'); ?>
+                            </figure>
+                        </a>
+                        <div class="news-text"><a href="<?php the_permalink(); ?>"><h1 class="home-post-title"><?php the_title(); ?></h1></a>
+                        	<?php the_excerpt(); ?></div>
+                    </article>
+                <?php endwhile; ?>
+                <?php wp_reset_postdata(); ?>
+            </div><!-- .news-boxes -->
+        </section>
+
 	</div><!-- .page-content -->
 </section><!-- .no-results -->

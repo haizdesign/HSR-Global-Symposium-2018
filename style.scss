@@ -236,7 +236,8 @@ a.more-link {
     margin: 0;
     padding-right: 0.65625em;
 }
-.main-navigation .current-menu-item > a:after { /* adds traingle under current page item */
+.main-navigation .current-menu-item > a:after,
+.main-navigation .current-menu-ancestor > a:after { /* adds triangle under current page item */
     border-left:  10px solid transparent;
     border-right:  10px solid transparent;
     border-bottom:  10px solid $green;
@@ -246,6 +247,9 @@ a.more-link {
     width: 0;
     height: 0;
     content: '';
+}
+.main-navigation .current-menu-ancestor>a:after { /* fixes the triangle width */
+    padding-right: 0;
 }
 .main-navigation .sub-menu .current-menu-item >a:after { /* hide it on sub menus */
     border-bottom-color: transparent;
@@ -261,7 +265,7 @@ a.more-link {
     border: none;
 }
 .main-navigation ul ul:before { /* hides the triangle */
-    border-color: white transparent;
+    border-color: transparent;
     border-width: 0 10px 10px;
     left: calc(50% - 9px);
     right: calc(50% - 9px);
@@ -277,27 +281,45 @@ a.more-link {
         color: white;
     }
 }
-.sub-menu li:before,
-.sub-menu li:after {
-    content: '';
+.main-navigation ul.sub-menu {
+    width: 100%;
+    display: block;
     position: absolute;
-    width: 9600px;
-    height: 42px;
-    background: $darkgrey;
-    right: 100%;
+    left: 0;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 2px;
+    background-color: black;
+    /* visibility: hidden;*/
 }
-.sub-menu li:after {
-    left: 100%;
-    top: 0;
+.main-navigation ul .sub-menu li {
+    display: inline-block;
+    float: left;
+    background-color: #00f;
 }
-.menu-bg {
-    background: $darkgrey;
-    height: 180px;
-    width: 100vw;
-    position: absolute;
-    left: -50vw;
-    z-index: 1;
-}
+
+
+/* .sub-menu li:before,*/
+/* .sub-menu li:after {*/
+/*     content: '';*/
+/*     position: absolute;*/
+/*     width: 9600px;*/
+/*     height: 42px;*/
+/*     background: $darkgrey;*/
+/*     right: 100%;*/
+/* }*/
+/* .sub-menu li:after {*/
+/*     left: 100%;*/
+/*     top: 0;*/
+/* }*/
+/* .menu-bg {*/
+/*     background: $darkgrey;*/
+/*     height: 180px;*/
+/*     width: 100vw;*/
+/*     position: absolute;*/
+/*     left: -50vw;*/
+/*     z-index: 1;*/
+/* }*/
 /* 2.2    Social navigation */
 .social-links-menu {
     list-style: none;

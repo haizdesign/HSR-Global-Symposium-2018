@@ -262,8 +262,6 @@ a.more-link {
 }
 .main-navigation li:hover > ul,
 .main-navigation li.focus > ul { /* centres the sub menu */
-    right: auto;
-    left: 0;
     visibility: visible;
 }
 .main-navigation ul ul:after { /* hides the 2016 top border cover */
@@ -287,23 +285,19 @@ a.more-link {
     }
 }
 .main-navigation ul.sub-menu {
-    width: auto;
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 42px;
+    display: flex;
+    justify-content: flex-start;
     margin-top: 2px;
     border-bottom: none;
     visibility: hidden;
+    z-index: 99999;
 }
 .main-navigation .sub-menu li { 
-    display: inline-block;
-    float: left;
     border: none;
-    position: static;
 }
 .main-navigation ul .sub-menu li a {
-    width: auto;
+   flex: 1 1 100%;
+   display: inline-block !important;
 }
 
 
@@ -320,14 +314,7 @@ a.more-link {
      left: 100%;
      top: 0;
 }
-/* .menu-bg {*/
-/*     background: $darkgrey;*/
-/*     height: 180px;*/
-/*     width: 100vw;*/
-/*     position: absolute;*/
-/*     left: -50vw;*/
-/*     z-index: 1;*/
-/* }*/
+
 /* 2.2    Social navigation */
 .social-links-menu {
     list-style: none;

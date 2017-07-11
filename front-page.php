@@ -64,7 +64,7 @@ get_header(); ?>
                     </div><!-- .news-boxes -->
                 </section>
                 <a href="<?php bloginfo('url'); ?>/blog">
-                    <button>Read more news and opinions</button>
+                    <button>Read more news and opinion</button>
                 </a>
         	</header><!-- .entry-header -->
 

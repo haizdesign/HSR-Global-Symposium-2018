@@ -213,11 +213,17 @@ a.more-link {
 .main-navigation {
     font-family: $main-font;
 }
-.main-navigation li { /* horizontal sub menu setup */
-    position: static;
+.main-navigation ul {
+    list-style: none;
+    margin: 0;
 }
+.main-navigation li {
+    position: relative;
+}
+
 .main-navigation a {
     color: $darkgrey;
+    display: block;
 }
 .main-navigation .primary-menu a:hover,
 .main-navigation .primary-menu a:focus,
@@ -229,7 +235,6 @@ a.more-link {
 .main-navigation .current-menu-ancestor > a {
     font-weight: 300;
     color: $green;
-    position: relative;
 }
 .main-navigation .menu-item-has-children > a {
     padding-right: 0.875em;
@@ -264,7 +269,6 @@ a.more-link {
 .main-navigation li.focus > ul { /* centres the sub menu */
     right: auto;
     left: 0;
-    visibility: visible;
 }
 .main-navigation ul ul:after { /* hides the 2016 top border cover */
     border: none;
@@ -287,37 +291,12 @@ a.more-link {
     }
 }
 .main-navigation ul.sub-menu {
-    width: auto;
-    display: block;
-    position: absolute;
-    left: 0;
     top: 42px;
     margin-top: 2px;
     border-bottom: none;
-    visibility: hidden;
-    z-index: 99999;
 }
-.main-navigation .sub-menu li { 
-    display: block;
-    float: left;
+.main-navigation .sub-menu li {
     border: none;
-    position: static;
-}
-.main-navigation ul .sub-menu li a {
-    width: auto;
-}
-.sub-menu li:before,
-.sub-menu li:after {
-     content: '';
-     position: absolute;
-     width: 9600px;
-     height: 42px;
-     background: $darkgrey;
-     right: 100%;
-}
-.sub-menu li:after {
-     left: 100%;
-     top: 0;
 }
 
 /* 2.2    Social navigation */
@@ -404,7 +383,6 @@ a.more-link {
     ul {
         list-style: none;
         margin-bottom: 0;
-        text-align: center;
     }
     li {
         display: inline-block;

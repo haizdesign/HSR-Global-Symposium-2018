@@ -26,7 +26,7 @@ get_header(); ?>
                     <article class="cta-box">
                         <h1 class="home-cta-title"><?php echo $cta_title; ?></h1>
                         <?php echo $cta_excerpt; ?>
-                        <a href="<?php echo $cta_button; ?>"><button>Read more</button></a>
+                        <a href="<?php echo $cta_button; ?>" class="button">Read more</a>
                     </article>
                 <?php endwhile; ?>
             <?php endif; ?>

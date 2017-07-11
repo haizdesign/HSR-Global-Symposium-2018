@@ -42,7 +42,7 @@
                                 <?php the_post_thumbnail('small-thumb'); ?>
                             </figure>
                         </a>
-                        <div class="news-text"><a href="<?php the_permalink(); ?>"><h1 class="home-post-title"><?php the_title(); ?></h1></a>
+                        <div class="news-text"><a href="<?php the_permalink(); ?>"><h2 class="home-post-title"><?php the_title(); ?></h2></a>
                         	<?php the_excerpt(); ?></div>
                     </article>
                 <?php endwhile; ?>

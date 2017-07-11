@@ -6,7 +6,7 @@ function haizdesign_enqueue_styles() {
 
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'hsrglobal-style',
-        get_stylesheet_directory_uri() . '/style.css',
+        get_stylesheet_directory_uri() . '/hsr.css',
         array( $parent_style ),
         wp_get_theme()->get('Version')
     );
@@ -17,10 +17,10 @@ function haizdesign_enqueue_styles() {
     wp_enqueue_script('haizdesign-jquery', get_stylesheet_directory_uri() . '/js/hd.jquery.js', array(jquery), '160617', true);
     wp_enqueue_script( 'haizdesign-search', get_stylesheet_directory_uri() . '/js/hide-search.js', array(), '060717', true );
 }
-// add some more stuff here
+// load the scripts
 add_action( 'wp_enqueue_scripts', 'haizdesign_enqueue_styles' );
 
-// This theme uses wp_nav_menu() in four locations.
+// This theme uses wp_nav_menu() in three locations.
 register_nav_menus( array(
     'primary' => __( 'Primary Menu', 'haizdesign' ),
     'social'  => __( 'Social Links Menu', 'haizdesign' ),
@@ -70,10 +70,25 @@ function haizdesign_theme_setup() {
 }
 add_action( 'after_setup_theme', 'haizdesign_theme_setup' );
 
+//  icons for devices etc
+add_action('wp_head', 'add_site_icons');
+function add_site_icons() {
+    ?>
+    <link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri();?>/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="58x58" href="<?php echo get_stylesheet_directory_uri();?>/icons/apple-touch-icon-58x58.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_stylesheet_directory_uri();?>/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_stylesheet_directory_uri();?>/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_stylesheet_directory_uri();?>/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_stylesheet_directory_uri();?>/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_stylesheet_directory_uri();?>/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_stylesheet_directory_uri();?>/icons/apple-touch-icon-152x152.png" />
+<?php
+}
+
 // show featured images in dashboard
 add_image_size( 'haizdesign-admin-post-featured-image', 120, 120, false );
 
-// Add the posts and pages columns filter. They can both use the same function.
+// Add the posts and pages columns filter. They both use the same function.
 add_filter('manage_posts_columns', 'haizdesign_add_post_admin_thumbnail_column', 2);
 add_filter('manage_pages_columns', 'haizdesign_add_post_admin_thumbnail_column', 2);
 
@@ -83,11 +98,11 @@ function haizdesign_add_post_admin_thumbnail_column($haizdesign_columns){
     return $haizdesign_columns;
 }
 
-// Let's manage Post and Page Admin Panel Columns
+// Manage Post and Page Admin Panel Columns
 add_action('manage_posts_custom_column', 'haizdesign_show_post_thumbnail_column', 5, 2);
 add_action('manage_pages_custom_column', 'haizdesign_show_post_thumbnail_column', 5, 2);
 
-// Here we are grabbing featured-thumbnail size post thumbnail and displaying it
+// Get featured-thumbnail size post thumbnail and display it
 function haizdesign_show_post_thumbnail_column($haizdesign_columns, $haizdesign_id){
     switch($haizdesign_columns){
         case 'haizdesign_thumb':

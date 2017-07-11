@@ -69,8 +69,8 @@ jQuery(document).ready(function($) {
 	    }
 	  });
 
-	  // scroll to top
-	  $("#scrollup").hide();
+	// scroll to top
+	$("#scrollup").hide();
 
 	$(function () {
 		$(window).scroll(function () {

@@ -36,7 +36,7 @@
 			// 	get_template_part( 'template-parts/biography' );
 			// }
 			if(get_field('post_authors')) {
-				echo '<p class="post-authors">' . get_field('post_authors') . '</p>';
+				echo '<span class="post-authors">' . get_field('post_authors') . '</span>';
 			}
 		?>
 	</div><!-- .entry-content -->

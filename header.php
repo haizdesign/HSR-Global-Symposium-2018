@@ -38,7 +38,7 @@
 			<div class="site-header-main site-inner">
 
 				<div class="site-branding">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="hsr2018 Global symposium on Health Systems Research"><figure class="banner-logo"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logos/banner-logo.svg" width="175" height="100" /></figure></a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="hsr2018 Global symposium on Health Systems Research"><figure class="banner-logo"><img src="<?php bloginfo('stylesheet_directory'); ?>/images/logos/banner-logo.svg" width="175" height="100" alt="HSR2018 logo" /></figure></a>
 				</div><!-- .site-branding -->
 
 

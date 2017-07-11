@@ -56,7 +56,7 @@ get_header(); ?>
                                         <?php the_post_thumbnail('small-thumb'); ?>
                                     </figure>
                                 </a>
-                                <a href="<?php the_permalink(); ?>"><h1 class="home-post-title"><?php the_title(); ?></h1></a>
+                                <a href="<?php the_permalink(); ?>"><h2 class="home-post-title"><?php the_title(); ?></h2></a>
                                 <?php the_excerpt(); ?>
                             </article>
                         <?php endwhile; ?>

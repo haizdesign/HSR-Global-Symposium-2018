@@ -70,6 +70,7 @@ input[type="submit"],
 input[type="submit"][disabled]:hover,
 input[type="submit"][disabled]:focus,
 .btn,
+a.button,
 a .btn,
 .elementor-tab-title {
     color: white;
@@ -88,6 +89,8 @@ button:hover:after,
 .btn:hover,
 .btn:hover:after,
 .btn a:hover,
+a.button:hover,
+a.button:hover:after,
 a .btn:hover:after,
 button.btn:hover:after {
     background: $darkblue;
@@ -95,6 +98,7 @@ button.btn:hover:after {
 button:after,
 .btn:after,
 a .btn:after,
+a.button:after,
 .elementor-tab-title.active :after {
     content: '';
     position: absolute;
@@ -110,6 +114,7 @@ a .btn:after,
     transform-origin: top;
     background: #8fc034;
 }
+
 button.comments-link {
     min-width: 180px;
 }
@@ -151,18 +156,7 @@ a.more-link {
     color: $green;
 }
 .breadcrumbs {
-    margin-bottom: 1em;
-    a:link, a:visited {
-        color: $darkgrey;
-    }
-    a:hover, a:active {
-        color: $green;
-    }
-}
-@media screen and (max-width: 700px) {
-    .breadcrumbs {
-        margin-left: $margin-7;
-    }
+    display: none;
 }
 /*--------------------------------------------------------------
 2    Header
@@ -591,15 +585,16 @@ h1, h2, h3, h4, h5, h6,
     font-family: 'Aller', arial, sans-serif;
     font-weight: 300;
 }
-h1.home-post-title {
-    min-height: 80px;
-}
 h1.entry-title,
 .comments-title,
 .comment-reply-title {
     font-family: 'Aller', arial, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
+}
+h2.home-post-title {
+    min-height: 80px;
+    font-size: 1em;
 }
 .entry-title {
     position: relative;
@@ -635,7 +630,7 @@ h1.entry-title,
     border-color: $lightgrey;
 }
 /* 3.3    Text */
-p.post-authors {
+span.post-authors p {
     padding: 1em;
     background: $palegrey;
 }
@@ -812,6 +807,12 @@ p.post-authors {
 .comment-form label {
     font-family: $main-font;
     letter-spacing: 0;
+}
+@media screen and (min-width: 767px) and (max-width: 910px) {
+    .elementor-widget-wp-widget-gform_widget .elementor-widget-container .gform_wrapper .gform_description:after {
+        font-size: 1.5em;
+        top: 0;
+    }
 }
 
 

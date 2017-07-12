@@ -20,6 +20,7 @@
 	<?php endif; ?>
 	<script src="https://use.typekit.net/tqt8aaw.js"></script>
 	<script>try{Typekit.load({ async: true });}catch(e){}</script>
+	<link rel="icon" href="http://healthsystemsresearch.org/hsr2018/favicon.png" type="image/png">
 	<?php wp_head(); ?>
 </head>
 

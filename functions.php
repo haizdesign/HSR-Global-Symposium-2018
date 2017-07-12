@@ -1,5 +1,12 @@
 <?php
 
+//  deregister jquery
+add_action( 'wp_default_scripts', function( $scripts ) {
+    if ( ! empty( $scripts->registered['jquery'] ) ) {
+        $scripts->registered['jquery']->deps = array_diff( $scripts->registered['jquery']->deps, array( 'jquery-migrate' ) );
+    }
+} );
+
 function haizdesign_enqueue_styles() {
 
     $parent_style = 'twentysixteen-style'; // This is 'twentysixteen-style' for the Twenty Sixteen theme.
@@ -74,6 +81,7 @@ add_action( 'after_setup_theme', 'haizdesign_theme_setup' );
 add_action('wp_head', 'add_site_icons');
 function add_site_icons() {
     ?>
+    <link rel="icon" href="<?php echo get_stylesheet_directory_uri();?>/favicon.png" />
     <link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri();?>/apple-touch-icon.png" />
     <link rel="apple-touch-icon" sizes="58x58" href="<?php echo get_stylesheet_directory_uri();?>/icons/apple-touch-icon-58x58.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_stylesheet_directory_uri();?>/icons/apple-touch-icon-72x72.png" />
@@ -83,6 +91,11 @@ function add_site_icons() {
     <link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_stylesheet_directory_uri();?>/icons/apple-touch-icon-144x144.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_stylesheet_directory_uri();?>/icons/apple-touch-icon-152x152.png" />
 <?php
+}
+//  remove google fonts
+function twentysixteen_fonts_url() {
+   $fonts_url = '';
+   return $fonts_url;
 }
 
 // show featured images in dashboard

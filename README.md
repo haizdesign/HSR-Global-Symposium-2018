@@ -16,7 +16,7 @@ Elementor Anywhere
 
 Breadcrumb NavXT
 
-Cutom Sidebars
+Custom Sidebars
 
 Easy WP SMTP
 
@@ -36,6 +36,8 @@ Testimonials Widget
 
 Updraft Plus
 
+Wordfence
+
 WP Help
 
 WP Migrate DB Pro and Meda Files Addon
@@ -43,4 +45,3 @@ WP Migrate DB Pro and Meda Files Addon
 WP Super Cache
 
 Yoast SEO
-

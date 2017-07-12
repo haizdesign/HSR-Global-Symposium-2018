@@ -692,6 +692,11 @@ span.post-authors p {
     width: 100vw;
     z-index: 1;
 }
+@media screen and (min-width: 2080px) {
+    .post-thumbnail {
+        max-height: 840px;
+    }
+}
 @media screen and (min-width: 1560px) {
     .post-thumbnail {
         max-height: 600px;
@@ -700,11 +705,6 @@ span.post-authors p {
 @media screen and (min-width: 1680px) {
     .post-thumbnail {
         max-height: 660px;
-    }
-}
-@media screen and (min-width: 2080px) {
-    .post-thumbnail {
-        max-height: 840px;
     }
 }
 @media screen and (min-width: 960px) and (max-width: 1380px) {

@@ -22,26 +22,30 @@ Plugins used in the making of this site:
 
 [Elementor](https://wordpress.org/plugins/elementor/)
 
-Google Analytics by MonsterInsights
+[Google Analytics by MonsterInsights](https://wordpress.org/plugins/google-analytics-for-wordpress/)
 
-Gravity Forms
+[Gravity Forms](http://www.gravityforms.com/)
 
-Gravity Forms MailChimp Add-On
+[Gravity Forms MailChimp Add-On](http://www.gravityforms.com/)
 
-Metaslider with the Pro Addon Pack
+[Math Captcha](https://wordpress.org/plugins/wp-math-captcha/)
 
-ShiftNav Pro
+[Metaslider with the Pro Addon Pack](https://www.metaslider.com/)
 
-Testimonials Widget
+[ShiftNav Pro](http://shiftnav.io/)
 
-Updraft Plus
+[Testimonials Widget](http://wordpress.org/plugins/testimonials-widget/)
 
-Wordfence
+[Updraft Plus](https://wordpress.org/plugins/updraftplus/)
 
-WP Help
+[Wordfence](https://wordpress.org/plugins/wordfence/)
 
-WP Migrate DB Pro and Meda Files Addon
+[WP Help](https://wordpress.org/plugins/wp-help/)
 
-WP Super Cache
+[WP Migrate DB Pro and Meda Files Addon](http://deliciousbrains.com/wp-migrate-db-pro/)
 
-Yoast SEO
+[WP Super Cache](https://wordpress.org/plugins/wp-super-cache/)
+
+[WPS Hide Login](https://wordpress.org/plugins/wps-hide-login/)
+
+[Yoast SEO](https://wordpress.org/plugins/wordpress-seo/)

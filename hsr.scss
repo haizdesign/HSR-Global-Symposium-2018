@@ -809,6 +809,9 @@ span.post-authors p {
     font-family: $main-font;
     letter-spacing: 0;
 }
+.comment-form-url {
+    display: none;
+}
 @media screen and (min-width: 767px) and (max-width: 910px) {
     .elementor-widget-wp-widget-gform_widget .elementor-widget-container .gform_wrapper .gform_description:after {
         font-size: 1.5em;

@@ -98,6 +98,13 @@ function twentysixteen_fonts_url() {
    return $fonts_url;
 }
 
+//  hide url field on comment form
+function haizdesign_disable_comment_url($fields) { 
+    unset($fields['url']);
+    return $fields;
+}
+add_filter('comment_form_default_fields','haizdesign_disable_comment_url');
+
 // show featured images in dashboard
 add_image_size( 'haizdesign-admin-post-featured-image', 120, 120, false );
 

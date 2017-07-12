@@ -8,19 +8,19 @@ This theme is being added to GitHub in accordance with the requirements of the I
 ## Plugin List
 Plugins used in the making of this site:
 
-Advanced Custom Fields Pro
+[Advanced Custom Fields Pro](https://www.advancedcustomfields.com/)
 
-Antispam Bee
+[Antispam Bee](https://wordpress.org/plugins/antispam-bee/)
 
-Elementor Anywhere
+[Elementor Anywhere](https://wordpress.org/plugins/anywhere-elementor/)
 
-Breadcrumb NavXT
+[Breadcrumb NavXT](https://wordpress.org/plugins/breadcrumb-navxt/)
 
-Custom Sidebars
+[Custom Sidebars](https://wordpress.org/plugins/custom-sidebars/)
 
-Easy WP SMTP
+[Easy WP SMTP](https://wordpress.org/plugins/easy-wp-smtp/)
 
-Elementor
+[Elementor](https://wordpress.org/plugins/elementor/)
 
 Google Analytics by MonsterInsights
 

@@ -914,6 +914,11 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
         }
     }
 }
+@media screen and (max-width: 600px) {
+    .entry-content {
+        padding-right: 4em;
+    }
+}
 
 /*--------------------------------------------------------------
 4    Footer

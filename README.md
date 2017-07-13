@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # HSR Global Symposium 2018
 WordPress Twenty Sixteen child theme for the HSR 2018 Global Symposium.
 
@@ -50,7 +49,4 @@ Plugins used in the making of this site:
 [WPS Hide Login](https://wordpress.org/plugins/wps-hide-login/)
 
 [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/)
-=======
-# HSR2018
-Health Systems Global symposium, 2018
->>>>>>> 02c952dec72edac2c5515ba9a241e63cd3a0c658
+

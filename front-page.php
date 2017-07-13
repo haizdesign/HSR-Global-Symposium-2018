@@ -39,7 +39,7 @@ get_header(); ?>
             </div><!-- .home-subscribe -->
         </section>
 
-        <!-- Updates/blog -->
+        <!-- News & opinion -->
         <article class="home-updates">
         	<header class="entry-header">
         		<h1 class="entry-title">News &amp; opinion</h1>

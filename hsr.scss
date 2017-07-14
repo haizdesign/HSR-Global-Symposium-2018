@@ -1009,11 +1009,6 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
             transform-origin: bottom right;
     content: '';
 }
-.footer-wrap.site-inner {
-    /* display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; */
-}
 .site-footer ul li {
     display: inline-block;
 }
@@ -1072,6 +1067,9 @@ ul.footer-menu {
     position: relative;
     z-index: 30;
     color: white;
+}
+span.footer-info p {
+    overflow: hidden;
 }
 /*--------------------------------------------------------------
 5    Widgets

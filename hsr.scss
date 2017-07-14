@@ -657,7 +657,8 @@ span.post-authors p {
     border: none;
 }
 /* 3.3.1   Lists */
-.entry-content ul {
+.entry-content ul,
+.widget ul {
     list-style: none;
     padding-left: 2em;
     li {
@@ -672,6 +673,9 @@ span.post-authors p {
         padding-right: 1em;
         margin-left: -1.4em;
     }
+}
+.widget ul li:before {
+    margin-left: -1.6em;
 }
 .entry-content ul.menu li:before {
     content: '';
@@ -1129,6 +1133,7 @@ span.footer-info p {
 --------------------------------------------------------------*/
 .widget {
     border-top: none;
+    font-size: 1em;
 }
 .widget .widget-title {
     font-family: $main-font;

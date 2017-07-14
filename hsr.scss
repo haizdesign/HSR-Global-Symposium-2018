@@ -18,6 +18,7 @@
         3.3.2   Photo Credits
     3.4    Images
     3.5    Blog
+    3.6    Pagination
 4   Footer
 5   Widgets
     5.1     Metaslider
@@ -232,7 +233,9 @@ a.more-link {
     padding-right: 0.65625em;
 }
 .main-navigation .current-menu-item > a:after,
-.main-navigation .current-menu-ancestor > a:after { /* adds triangle under current page item */
+.main-navigation .current-menu-ancestor > a:after,
+.archive .main-navigation .menu-item-370 > a:after,
+.single .main-navigation .menu-item-370 > a:after { /* adds triangle under current page item */
     border-left:  10px solid transparent;
     border-right:  10px solid transparent;
     border-bottom:  10px solid $green;
@@ -243,7 +246,9 @@ a.more-link {
     height: 0;
     content: '';
 }
-.main-navigation .current-menu-ancestor>a:after { /* fixes the triangle width */
+.main-navigation .current-menu-ancestor>a:after,
+.archive .main-navigation .menu-item-370 > a:after,
+.single .main-navigation .menu-item-370 > a:after { /* fixes the triangle width */
     padding-right: 0;
 }
 .main-navigation .sub-menu .current-menu-item >a:after { /* hide it on sub menus */
@@ -588,10 +593,16 @@ h1, h2, h3, h4, h5, h6,
 }
 h1.entry-title,
 .comments-title,
-.comment-reply-title {
+.comment-reply-title,
+.page-header .page-title {
     font-family: 'Aller', arial, sans-serif;
     font-weight: 700;
     text-transform: uppercase;
+}
+.page-title {
+    font-size: 2.5em;
+    position: relative;
+    border-bottom: 2px solid;
 }
 h2.home-post-title {
     min-height: 80px;
@@ -602,7 +613,9 @@ h2.home-post-title {
     border-bottom: 2px solid;
 }
 .entry-title:before,
-.entry-title:after {
+.entry-title:after,
+.page-header .page-title:before,
+.page-header .page-title:after {
     content: '';
     position: absolute;
     width: 9600px;
@@ -610,7 +623,8 @@ h2.home-post-title {
     right: 100%;
     bottom: -2px;
 }
-.entry-title:after {
+.entry-title:after,
+.page-header .page-title:after {
     left: 100%;
 }
 .page-template-right-sidebar .entry-title:after ,
@@ -631,6 +645,10 @@ h2.home-post-title {
     border-color: $lightgrey;
 }
 /* 3.3    Text */
+.page-header {
+    border-top: none;
+    padding-top: 0;
+}
 span.post-authors p {
     padding: 1em;
     background: $palegrey;
@@ -819,9 +837,9 @@ span.post-authors p {
     }
 }
 
-
 /* 3.5  Blog */
-.blog article {
+.blog article,
+.archive article {
     padding: 1em;
     margin-bottom: 1em;
     background: $palegrey;
@@ -862,13 +880,16 @@ span.post-authors p {
     }
 }
 .blog .entry-title:before,
-.blog .entry-title:after {
+.blog .entry-title:after,
+.archive .entry-title:before,
+.archive .entry-title:after {
         border: none;
 }
 body:not(.search-results) article:not(.type-page) .entry-footer {
     margin-top: 1em;
 }
-.blog .posted-on {
+.blog .posted-on,
+.archive .posted-on {
     padding: 5px 10px;
     background: $darkblue;
     color: white;
@@ -883,7 +904,8 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
     font-weight: 300;
 }
 @media screen and (max-width: 910px) {
-    .blog article {
+    .blog article,
+    .archive article {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
@@ -918,6 +940,37 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
     .entry-content {
         padding-right: 4em;
     }
+}
+
+/* 3.6  Pagination */
+.pagination {
+    border-top: 2px solid $green;
+    font-family: $main-font;
+}
+.pagination .prev,
+.pagination .next,
+.pagination:before,
+.pagination:after {
+    background-color: $green;
+}
+.pagination .next:before {
+    content: '\f501';
+    right: -10px;
+}
+.pagination:after {
+    display: none;
+}
+.pagination .prev:before {
+    content: '\f503';
+    left: -10px;
+}
+.pagination .nav-links:before {
+    content: '\f501';
+    right: -10px;
+}
+.pagination .nav-links:after {
+    content: '\f501';
+    right: -10px;
 }
 
 /*--------------------------------------------------------------

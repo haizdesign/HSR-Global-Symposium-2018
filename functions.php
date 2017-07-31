@@ -1,11 +1,6 @@
 <?php
 
-//  deregister jquery
-add_action( 'wp_default_scripts', function( $scripts ) {
-    if ( ! empty( $scripts->registered['jquery'] ) ) {
-        $scripts->registered['jquery']->deps = array_diff( $scripts->registered['jquery']->deps, array( 'jquery-migrate' ) );
-    }
-} );
+
 
 function haizdesign_enqueue_styles() {
 
@@ -60,7 +55,7 @@ add_filter ('excerpt_length', 'haizdesign_excerpt_length', 999);
 
 // Custom more link text
 function haizdesign_excerpt_more() {
-	$link = sprintf( '<a href="%1$s" class="more-link"><button  class="btn">%2$s</button></a>',
+	$link = sprintf( '<a href="%1$s" class="more-link button">%2$s</a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
 		sprintf( __( 'Read more<span class="screen-reader-text"> "%s"</span>', 'haizdesign' ), get_the_title( get_the_ID() ) )
@@ -99,7 +94,7 @@ function twentysixteen_fonts_url() {
 }
 
 //  hide url field on comment form
-function haizdesign_disable_comment_url($fields) { 
+function haizdesign_disable_comment_url($fields) {
     unset($fields['url']);
     return $fields;
 }

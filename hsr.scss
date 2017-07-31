@@ -153,6 +153,7 @@ a.more-link {
     -webkit-box-shadow: none;
             box-shadow: none;
             margin-top: 2.5em;
+    max-width: 130px;
 }
 .post-navigation a {
     color: $green;
@@ -1125,7 +1126,7 @@ ul.footer-menu {
     z-index: 30;
     color: white;
 }
-span.footer-info p {
+div.footer-info p {
     overflow: hidden;
 }
 /*--------------------------------------------------------------

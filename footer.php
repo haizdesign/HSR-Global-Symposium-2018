@@ -50,7 +50,7 @@
                     </div><!-- .extras-r1 -->
 
                     <div class="extras-r2 site-details">
-                        <span class="footer-info"><a href="http://www.healthsystemsglobal.org/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/hsg-logo.svg" alt="Health Systems Global" /></a><p>Health Systems Global organizes a symposium every two years to bring together its members with the full range of players involved in health systems and policy research. There is currently no other international gathering that serves the needs of this community.</p></span>
+                        <div class="footer-info"><a href="http://www.healthsystemsglobal.org/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logos/hsg-logo.svg" alt="Health Systems Global" /></a><p>Health Systems Global organizes a symposium every two years to bring together its members with the full range of players involved in health systems and policy research. There is currently no other international gathering that serves the needs of this community.</p></div>
                     </div><!-- .site-info -->
                 </div><!-- .footer-extras -->
             </div><!-- .footer-wrap -->

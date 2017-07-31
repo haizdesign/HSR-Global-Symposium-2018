@@ -63,8 +63,8 @@ get_header(); ?>
                         <?php wp_reset_postdata(); ?>
                     </div><!-- .news-boxes -->
                 </section>
-                <a href="<?php bloginfo('url'); ?>/blog">
-                    <button>Read more news and opinion</button>
+                <a href="<?php bloginfo('url'); ?>/blog" class="button">
+                    Read more news and opinion
                 </a>
         	</header><!-- .entry-header -->
 

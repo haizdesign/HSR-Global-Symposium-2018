@@ -55,7 +55,7 @@
                 </div><!-- .footer-extras -->
             </div><!-- .footer-wrap -->
 		</footer><!-- .site-footer -->
-		<footer id="credits" class="site-footer credits" role="link">
+		<footer id="credits" class="site-footer credits">
 		<div class="site-info">
 			<?php do_action( 'haizdesign_credits' ); ?>
 			<div class="copyright">
@@ -63,7 +63,7 @@
 			printf(
 				/* translators: %s = text link: WordPress, URL: http://wordpress.org/ */
 				__( '&copy; %1$s', 'haizdesign' ),
-				date('Y') . '&nbsp;<a href="' .esc_url( home_url('/') ) . '" rel="generator">' . esc_attr__( 'Health Systems Global', 'haizdesign' ) . '</a>.<br>Developed by <a href="https://haizdesign.com">Haiz Design</a>, and designed by <a href="http://veryownstudio.com/">Very Own Studio</a>, based on branding design by <a href="http://www.fruit-design.co.uk/">Fruit Design</a>.'
+				date('Y') . '&nbsp;<a href="' .esc_url( home_url('/') ) . '">' . esc_attr__( 'Health Systems Global', 'haizdesign' ) . '</a>.<br>Developed by <a href="https://haizdesign.com">Haiz Design</a>, and designed by <a href="http://veryownstudio.com/">Very Own Studio</a>, based on branding design by <a href="http://www.fruit-design.co.uk/">Fruit Design</a>.'
 				); ?>
 			</div>
 		</div><!-- .site-info -->

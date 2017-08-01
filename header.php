@@ -35,7 +35,7 @@
 			</div>
 		</div>
 
-		<header id="masthead" class="site-header" role="banner">
+		<header id="masthead" class="site-header">
 			<div class="site-header-main site-inner">
 
 				<div class="site-branding">
@@ -44,7 +44,7 @@
 
 
 				<?php if ( has_nav_menu( 'social' ) ) : ?>
-					<nav id="social-navigation" class="social-navigation" role="navigation">
+					<nav id="social-navigation" class="social-navigation">
 						<?php
 							wp_nav_menu( array(
 								'theme_location' => 'social',
@@ -63,7 +63,7 @@
 
 					<div id="site-header-menu" class="site-header-menu">
 						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
+							<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'twentysixteen' ); ?>">
 								<?php
 									wp_nav_menu( array(
 										'theme_location' => 'primary',

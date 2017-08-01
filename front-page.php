@@ -42,7 +42,7 @@ get_header(); ?>
         <!-- News & opinion -->
         <article class="home-updates">
         	<header class="entry-header">
-        		<h1 class="entry-title">News &amp; opinion</h1>
+        		<h2 class="entry-title">News &amp; opinion</h2>
                 <section class="home-news">
                     <div class="news-boxes content-area home">
                             <?php
@@ -76,7 +76,7 @@ get_header(); ?>
 
         <article class="home-keydates">
         	<header class="entry-header">
-        		<h1 class="entry-title">Key Dates</h1>
+        		<h2 class="entry-title">Key Dates</h2>
         	</header><!-- .entry-header -->
 
         	<div class="home-events entry-content">
@@ -87,7 +87,7 @@ get_header(); ?>
 
         <article class="home-sponsors">
         	<header class="entry-header">
-        		<h1 class="entry-title">Our Sponsors</h1>
+        		<h2 class="entry-title">Our Sponsors</h2>
         	</header><!-- .entry-header -->
 
         	<div class="entry-content">

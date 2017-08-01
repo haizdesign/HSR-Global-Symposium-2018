@@ -129,7 +129,7 @@ section {
         -webkit-box-direction: normal;
             -ms-flex-direction: column;
                 flex-direction: column;
-    
+
         .image {
             margin: -1em -1em 1em;
             background-size: cover;
@@ -349,11 +349,17 @@ article.home-keydates {
 .sponsors-tbl {
     vertical-align: top;
     border: none;
+    padding: 0;
+    width: 100%;
     tr, td {
         border: none;
     }
     td {
         vertical-align: top;
+        width: 50%;
+    }
+    td.full-width-cell {
+        width: 100%;
     }
     img {
         display: block;
@@ -417,5 +423,3 @@ article.home-keydates {
         float: none;
     }
 }
-
-

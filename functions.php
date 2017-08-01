@@ -1,7 +1,5 @@
 <?php
 
-
-
 function haizdesign_enqueue_styles() {
 
     $parent_style = 'twentysixteen-style'; // This is 'twentysixteen-style' for the Twenty Sixteen theme.
@@ -88,10 +86,10 @@ function add_site_icons() {
 <?php
 }
 //  remove google fonts
-function twentysixteen_fonts_url() {
-   $fonts_url = '';
-   return $fonts_url;
+function haizdesign_dequeue_google_fonts() {
+    wp_dequeue_style( 'twentysixteen-fonts' );
 }
+add_action( 'wp_enqueue_scripts', 'haizdesign_dequeue_google_fonts', 20 );
 
 //  hide url field on comment form
 function haizdesign_disable_comment_url($fields) {

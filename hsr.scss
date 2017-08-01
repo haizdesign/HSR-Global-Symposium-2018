@@ -607,8 +607,9 @@ h2.entry-title,
     border-bottom: 2px solid;
 }
 h2.home-post-title {
-    min-height: 80px;
-    font-size: 1em;
+    min-height: 130px;
+    font-size: 1.5em;
+    line-height: 1.4;
 }
 .entry-title {
     position: relative;
@@ -982,6 +983,9 @@ body:not(.search-results) article:not(.type-page) .entry-footer {
 /*--------------------------------------------------------------
 4    Footer
 --------------------------------------------------------------*/
+.testimonial.site-inner {
+    max-width: 1024px;
+}
 .testimonials {
     background: $paleblue;
     padding: 4.5455% 4.5455% 10%;

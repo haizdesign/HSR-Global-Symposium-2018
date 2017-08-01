@@ -71,7 +71,7 @@ section {
 
     .cta-box {
         border: 1px solid $green;
-        padding: 1em 1em 2em;
+        padding: 1em 1em 1.6em;
         margin-bottom: 1em;
 
         .home-cta-title {
@@ -195,7 +195,7 @@ mailchimp
 .mailchimp-form {
     background: $palegrey;
     width: 100%;
-    padding: 0 0 10px 10px;
+    padding: 0 0 10px 16px;
     position: relative;
     /* min-height: 500px; */
     .gform_wrapper {
@@ -207,10 +207,10 @@ mailchimp
             background: $darkblue;
             color: white;
             margin-bottom: 1em;
-            margin-left: -10px;
+            margin-left: -16px;
             padding: 10px;
             position: relative;
-            width: calc(100% + 10px);
+            width: calc(100% + 16px);
             .gform_description {
                 font-weight: 300;
                 font-size: 1.8em;
@@ -301,15 +301,18 @@ body:not(.search-results) article:not(.type-page) .entry-content {
 }
 
 .home-events.entry-content:before {
-    margin-top: -7px;
+    /* margin-top: -7px;*/
     content: '';
+}
+.home-events.entry-content {
+    padding-top: 1.25em;
 }
 article.home-keydates {
     padding: 2em 0;
 }
 .metaslider {
     margin-top: -2em;
-    padding-bottom: 2em;
+    /* padding-bottom: 2em;*/
 }
 
 .home-events .metaslider li {
@@ -319,6 +322,16 @@ article.home-keydates {
 @media screen and (max-width: 600px) {
     .home-events .metaslider li {
         width: 330px;
+    }
+    .metaslider-135 .flexslider .flex-direction-nav .flex-prev,
+    .metaslider-135 .flexslider .flex-direction-nav .flex-next {
+        height: 75px !important;
+    }
+    .metaslider-135 .flexslider .flex-direction-nav .flex-prev {
+        left: -30px !important;
+    }
+    .metaslider-135 .flexslider .flex-direction-nav .flex-next {
+        right: -30px !important;
     }
 }
 /*-----------------------------------------

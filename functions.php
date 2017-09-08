@@ -119,8 +119,9 @@ add_action('manage_pages_custom_column', 'haizdesign_show_post_thumbnail_column'
 function haizdesign_show_post_thumbnail_column($haizdesign_columns, $haizdesign_id){
     switch($haizdesign_columns){
         case 'haizdesign_thumb':
-        if( function_exists('the_post_thumbnail') )
+        if( function_exists('the_post_thumbnail') ) {
             echo the_post_thumbnail( 'haizdesign-admin-post-featured-image' );
+        }
         else
             echo 'hmm... your theme doesn\'t support featured image...';
         break;
@@ -197,57 +198,55 @@ add_filter("login_headertitle","haizdesign_loginpage_logo_title");
 add_action('login_head', 'haizdesign_custom_login');
 
 //  keynote speakers cpt
-if ( ! function_exists('speakers_post_type') ) {
+if ( ! function_exists('keynote_speakers_post_type') ) {
 
-// Register Custom Post Type
-    add_action( 'init', 'speakers_post_type', 0 );
+    function keynote_speakers_post_type() {
 
-    function speakers_post_type() {
         $labels = array(
-            'name'                  => 'Keynote Speakers',
-            'singular_name'         => 'Keynote Speaker',
-            'menu_name'             => 'Keynote Speakers',
-            'name_admin_bar'        => 'Keynote Speakers',
-            'archives'              => 'Speaker Archives',
-            'attributes'            => 'Speaker Attributes',
-            'parent_item_colon'     => 'Parent Speaker:',
-            'all_items'             => 'All Speakers',
-            'add_new_item'          => 'Add New Speaker',
-            'add_new'               => 'Add New Speaker',
-            'new_item'              => 'New Speaker',
-            'edit_item'             => 'Edit Speaker',
-            'update_item'           => 'Update Speaker',
-            'view_item'             => 'View Speaker',
-            'view_items'            => 'View Speakers',
-            'search_items'          => 'Search Speakers',
-            'not_found'             => 'Not found',
-            'not_found_in_trash'    => 'Not found in Trash',
-            'featured_image'        => 'Featured Image',
-            'set_featured_image'    => 'Set featured image',
-            'remove_featured_image' => 'Remove featured image',
-            'use_featured_image'    => 'Use as featured image',
-            'insert_into_item'      => 'Insert into speaker',
-            'uploaded_to_this_item' => 'Uploaded to this speaker',
-            'items_list'            => 'Speakers list',
-            'items_list_navigation' => 'Speakers list navigation',
-            'filter_items_list'     => 'Filter speakers list',
+            'name'                  => _x( 'Keynote Speakers', 'Post Type General Name', 'twentysixteen' ),
+            'singular_name'         => _x( 'Keynote Speaker', 'Post Type Singular Name', 'twentysixteen' ),
+            'menu_name'             => __( 'Keynote Speakers', 'twentysixteen' ),
+            'name_admin_bar'        => __( 'Keynote Speakers', 'twentysixteen' ),
+            'archives'              => __( 'Speakers Archives', 'twentysixteen' ),
+            'attributes'            => __( 'Speaker Attributes', 'twentysixteen' ),
+            'parent_item_colon'     => __( 'Parent Item:', 'twentysixteen' ),
+            'all_items'             => __( 'All Keynote Speakers', 'twentysixteen' ),
+            'add_new_item'          => __( 'Add New Keynote Speaker', 'twentysixteen' ),
+            'add_new'               => __( 'Add New Speaker', 'twentysixteen' ),
+            'new_item'              => __( 'New Keynote Speaker', 'twentysixteen' ),
+            'edit_item'             => __( 'Edit Speaker', 'twentysixteen' ),
+            'update_item'           => __( 'Update Speaker', 'twentysixteen' ),
+            'view_item'             => __( 'View Speaker', 'twentysixteen' ),
+            'view_items'            => __( 'View Keynote Speakers', 'twentysixteen' ),
+            'search_items'          => __( 'Search Keynote Speakers', 'twentysixteen' ),
+            'not_found'             => __( 'Speaker Not found', 'twentysixteen' ),
+            'not_found_in_trash'    => __( 'Not found in Trash', 'twentysixteen' ),
+            'featured_image'        => __( 'Featured Image', 'twentysixteen' ),
+            'set_featured_image'    => __( 'Set featured image', 'twentysixteen' ),
+            'remove_featured_image' => __( 'Remove featured image', 'twentysixteen' ),
+            'use_featured_image'    => __( 'Use as featured image', 'twentysixteen' ),
+            'insert_into_item'      => __( 'Insert into speaker', 'twentysixteen' ),
+            'uploaded_to_this_item' => __( 'Uploaded to this keynote speaker', 'twentysixteen' ),
+            'items_list'            => __( 'Keynote Speakers list', 'twentysixteen' ),
+            'items_list_navigation' => __( 'Speakers list navigation', 'twentysixteen' ),
+            'filter_items_list'     => __( 'Filter speakers list', 'twentysixteen' ),
         );
         $args = array(
-            'label'                 => 'Keynote Speaker',
-            'description'           => 'Keynote Speakers',
+            'label'                 => __( 'Keynote Speaker', 'twentysixteen' ),
+            'description'           => __( 'Custom post type for the HSR Keynote Speakers', 'twentysixteen' ),
             'labels'                => $labels,
-            'supports'              => array( 'title', 'editor', 'excerpt', 'custom-fields', ),
+            'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
             'taxonomies'            => array( 'category', 'post_tag' ),
-            'hierarchical'          => true,
+            'hierarchical'          => false,
             'public'                => true,
             'show_ui'               => true,
             'show_in_menu'          => true,
             'menu_position'         => 5,
-            'menu_icon'             => 'dashicons-megaphone',
+            'menu_icon'             => 'dashicons-microphone',
             'show_in_admin_bar'     => true,
             'show_in_nav_menus'     => true,
             'can_export'            => true,
-            'has_archive'           => true,
+            'has_archive'           => true,        
             'exclude_from_search'   => false,
             'publicly_queryable'    => true,
             'capability_type'       => 'page',
@@ -255,5 +254,6 @@ if ( ! function_exists('speakers_post_type') ) {
         register_post_type( 'keynote_speakers', $args );
 
     }
+    add_action( 'init', 'keynote_speakers_post_type', 0 );
 
 }

@@ -206,7 +206,7 @@ if ( ! function_exists('keynote_speakers_post_type') ) {
             'name'                  => _x( 'Keynote Speakers', 'Post Type General Name', 'twentysixteen' ),
             'singular_name'         => _x( 'Keynote Speaker', 'Post Type Singular Name', 'twentysixteen' ),
             'menu_name'             => __( 'Keynote Speakers', 'twentysixteen' ),
-            'name_admin_bar'        => __( 'Keynote Speakers', 'twentysixteen' ),
+            'name_admin_bar'        => __( 'Keynote Speaker', 'twentysixteen' ),
             'archives'              => __( 'Speakers Archives', 'twentysixteen' ),
             'attributes'            => __( 'Speaker Attributes', 'twentysixteen' ),
             'parent_item_colon'     => __( 'Parent Item:', 'twentysixteen' ),

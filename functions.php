@@ -235,7 +235,7 @@ if ( ! function_exists('keynote_speakers_post_type') ) {
             'label'                 => __( 'Keynote Speaker', 'twentysixteen' ),
             'description'           => __( 'Custom post type for the HSR Keynote Speakers', 'twentysixteen' ),
             'labels'                => $labels,
-            'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', 'custom-fields', ),
+            'supports'              => array( 'title', 'thumbnail', 'revisions', 'custom-fields', ),
             'taxonomies'            => array( 'category', 'post_tag' ),
             'hierarchical'          => false,
             'public'                => true,

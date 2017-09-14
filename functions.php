@@ -43,6 +43,7 @@ add_action( 'widgets_init', 'header_widgets_init' );
 // Featured image sizes
 add_theme_support('post-thumbnails');
 add_image_size('small-thumb', 300, 200, true);
+add_image_size('speakers-thumb', 300, 300, true);
 add_image_size('medium-thumb', 640, 400, true);
 
 // Limit excerpt length
@@ -198,9 +199,9 @@ add_filter("login_headertitle","haizdesign_loginpage_logo_title");
 add_action('login_head', 'haizdesign_custom_login');
 
 //  keynote speakers cpt
-if ( ! function_exists('keynote_speakers_post_type') ) {
+if ( ! function_exists('speakers_post_type') ) {
 
-    function keynote_speakers_post_type() {
+    function speakers_post_type() {
 
         $labels = array(
             'name'                  => _x( 'Keynote Speakers', 'Post Type General Name', 'twentysixteen' ),
@@ -236,7 +237,6 @@ if ( ! function_exists('keynote_speakers_post_type') ) {
             'description'           => __( 'Custom post type for the HSR Keynote Speakers', 'twentysixteen' ),
             'labels'                => $labels,
             'supports'              => array( 'title', 'thumbnail', 'revisions', 'custom-fields', ),
-            'taxonomies'            => array( 'category', 'post_tag' ),
             'hierarchical'          => false,
             'public'                => true,
             'show_ui'               => true,
@@ -249,11 +249,63 @@ if ( ! function_exists('keynote_speakers_post_type') ) {
             'has_archive'           => true,        
             'exclude_from_search'   => false,
             'publicly_queryable'    => true,
-            'capability_type'       => 'page',
+            'pages'                 => true,
+            'capability_type'       => 'page'
         );
-        register_post_type( 'keynote_speakers', $args );
+        register_post_type( 'speakers', $args );
 
     }
-    add_action( 'init', 'keynote_speakers_post_type', 0 );
+    add_action( 'init', 'speakers_post_type', 0 );
 
+}
+
+// Register Custom Taxonomy for Keynote Speakers
+function hsr_plenaries() {
+
+    $labels = array(
+        'name'                       => _x( 'Plenaries', 'Taxonomy General Name', 'twentysixteen' ),
+        'singular_name'              => _x( 'Plenary', 'Taxonomy Singular Name', 'twentysixteen' ),
+        'menu_name'                  => __( 'Plenary', 'twentysixteen' ),
+        'all_items'                  => __( 'All Plenaries', 'twentysixteen' ),
+        'parent_item'                => __( 'Parent Item', 'twentysixteen' ),
+        'parent_item_colon'          => __( 'Parent Item:', 'twentysixteen' ),
+        'new_item_name'              => __( 'New Plenary Name', 'twentysixteen' ),
+        'add_new_item'               => __( 'Add New Plenary', 'twentysixteen' ),
+        'edit_item'                  => __( 'Edit Plenary', 'twentysixteen' ),
+        'update_item'                => __( 'Update Plenary', 'twentysixteen' ),
+        'view_item'                  => __( 'View Plenary', 'twentysixteen' ),
+        'separate_items_with_commas' => __( 'Separate plenaries with commas', 'twentysixteen' ),
+        'add_or_remove_items'        => __( 'Add or remove plenaries', 'twentysixteen' ),
+        'choose_from_most_used'      => __( 'Click to select', 'twentysixteen' ),
+        'popular_items'              => __( 'Popular plenaries', 'twentysixteen' ),
+        'search_items'               => __( 'Search plenaries', 'twentysixteen' ),
+        'not_found'                  => __( 'Not Found', 'twentysixteen' ),
+        'no_terms'                   => __( 'No items', 'twentysixteen' ),
+        'items_list'                 => __( 'Plenaries list', 'twentysixteen' ),
+        'items_list_navigation'      => __( 'Plenaries list navigation', 'twentysixteen' ),
+    );
+    $args = array(
+        'labels'                     => $labels,
+        'hierarchical'               => false,
+        'public'                     => true,
+        'show_ui'                    => true,
+        'show_admin_column'          => true,
+        'show_in_nav_menus'          => false,
+        'show_tagcloud'              => true,
+    );
+    register_taxonomy( 'plenaries', array( 'speakers' ), $args );
+
+}
+add_action( 'init', 'hsr_plenaries', 0 );
+
+// display custom taxonomy in templates
+function display_taxonomy_terms($post_type, $display = false) {
+    global $post;
+    $term_list = wp_get_post_terms($post->ID, $post_type, array('fields' => 'names'));
+ 
+    if($display == false) {
+        echo $term_list[0];
+    }elseif($display == 'return') {
+        return  $term_list[0];
+    }
 }

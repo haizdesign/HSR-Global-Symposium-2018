@@ -38,7 +38,12 @@ get_header(); ?>
 					<a href="<?php the_permalink(); ?>">
 						<?php the_post_thumbnail('speakers-thumb'); ?>
 					</a>
-
+					<div class="link-mask">
+						<a href="<?php the_permalink(); ?>">
+							<i class="fa fa-address-card-o" aria-hidden="true"></i>
+							<p>View full profile</p>
+						</a>
+					</div>
 				</figure>
 				<div class="speaker-text">
 					<header class="entry-header">

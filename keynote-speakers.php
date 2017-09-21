@@ -40,7 +40,8 @@ get_header(); ?>
 					</a>
 					<div class="link-mask">
 						<a href="<?php the_permalink(); ?>">
-							<i class="fa fa-address-card-o" aria-hidden="true"></i>
+							<!-- <i class="fa fa-address-card-o" aria-hidden="true"></i> -->
+							<img src="<?php echo bloginfo('stylesheet_directory');?>/images/logos/hsr-bird.svg" alt="">
 							<p>View full profile</p>
 						</a>
 					</div>
@@ -83,5 +84,4 @@ get_header(); ?>
 	</div><!-- .content-area -->
 
 <?php get_footer(); ?>
-
 

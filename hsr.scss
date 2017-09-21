@@ -1295,7 +1295,9 @@ a.tribe-event-url {
                 -webkit-box-pack: center;
                     -ms-flex-pack: center;
                         justify-content: center;
-                i { font-size: 6em; }
+                a img {
+                    width: 30%;
+                }
 
             }
             .link-mask:hover {

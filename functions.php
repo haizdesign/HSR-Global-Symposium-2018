@@ -198,6 +198,18 @@ add_filter("login_headerurl","haizdesign_loginpage_logo_link");
 add_filter("login_headertitle","haizdesign_loginpage_logo_title");
 add_action('login_head', 'haizdesign_custom_login');
 
+/** change default wordpress email settings */
+ 
+add_filter('wp_mail_from', 'new_mail_from');
+add_filter('wp_mail_from_name', 'new_mail_from_name');
+ 
+function new_mail_from($old) {
+ return 'info@healthsystemsglobal.org';
+}
+function new_mail_from_name($old) {
+ return 'HSR2018';
+}
+
 //  keynote speakers cpt
 if ( ! function_exists('speakers_post_type') ) {
 

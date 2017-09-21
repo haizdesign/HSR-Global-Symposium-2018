@@ -50,3 +50,5 @@ Plugins used in the making of this site:
 
 [Yoast SEO](https://wordpress.org/plugins/wordpress-seo/)
 
+[WPML](https://wpml.org/)
+

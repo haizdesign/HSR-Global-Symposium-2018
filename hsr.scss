@@ -26,6 +26,7 @@
 7   Scrollup
 8   Events Calendar
 9   Keynote Speakers
+10  WPML
 --------------------------------------------------------------*/
 
 html, body {
@@ -1403,3 +1404,16 @@ a.tribe-event-url {
         display: inline-block;
     }
 }
+/*-----------------------------------------
+    10 WPML
+-----------------------------------------*/
+.entry-content .wpml-ls-statics-post_translations .wpml-ls-item a {
+    text-decoration: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+}
+.entry-content .wpml-ls-statics-post_translations .wpml-ls-flag {
+    width: 140px;
+    height: 40px;
+}
+

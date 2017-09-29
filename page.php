@@ -31,7 +31,6 @@ get_header(); ?>
 					?>
 				</div><!-- .entry-content -->
 
-
 			</article><!-- #post-## -->
 
 		<?php  // End of the loop.

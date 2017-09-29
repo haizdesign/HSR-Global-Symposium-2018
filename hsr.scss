@@ -16,6 +16,7 @@
     3.3    Text
         3.3.1   Lists
         3.3.2   Photo Credits
+        3.3.3   Download button
     3.4    Images
     3.5    Blog
     3.6    Pagination
@@ -696,6 +697,75 @@ span.post-authors p {
 .photo-credits {
     font-size: 0.75em;
     color: $midblue;
+}
+
+/* 3.3.3    Download button */
+.file-download {
+    border: 1px solid $green;
+    padding: 1em 0 1em 1em;
+    margin-bottom: 1em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 45%;
+}
+.file-info {
+    -webkit-box-flex: 3;
+        -ms-flex: 3;
+            flex: 3;
+    p {
+        margin-bottom: 0.75em;
+    }
+    p.file-authors {
+        max-width: 75%;
+        em {
+            float: left;
+            width: 60px;
+        }
+        span {
+            display: table;
+        }
+    }
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+.download-btn {
+    margin: calc(-1em - 1px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+    .download-icon {
+        background:$darkblue;
+        padding: 1em 2em;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1 0 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;        
+        img {
+            -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+                align-self: center;
+        }
+    }
+    a.btn {
+        margin-left: -0.95em;
+    }
+    a.btn:hover {
+        color: white;
+    }
 }
 
 /* 3.4    Images */

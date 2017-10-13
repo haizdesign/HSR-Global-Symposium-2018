@@ -21,6 +21,7 @@
 	<div class="entry-content">
 
 		<?php
+		do_action('wpml_add_language_selector');
 			the_content();
 
 			wp_link_pages( array(

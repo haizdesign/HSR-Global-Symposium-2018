@@ -1486,4 +1486,14 @@ a.tribe-event-url {
     width: 140px;
     height: 40px;
 }
+/* custom language switcher output as list */
+.wpml-ls-statics-shortcode_actions.wpml-ls.wpml-ls-legacy-list-horizontal {
+    ul {
+        padding-left: 0;
+        display: none;
+    }
+    li::before {
+        content: '';
+    }
+}
 

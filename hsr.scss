@@ -1490,10 +1490,45 @@ a.tribe-event-url {
 .wpml-ls-statics-shortcode_actions.wpml-ls.wpml-ls-legacy-list-horizontal {
     ul {
         padding-left: 0;
-        display: none;
+        /* display: none;*/
     }
     li::before {
         content: '';
     }
 }
+/*-----------------------------------------
+    11 App link button
+-----------------------------------------*/
+.app-link {
+    color: white;
+    background: $green;
+    padding: 1em 1.5em;
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1;
+    width: 25%;
+    position: absolute;
+    right: 4.5455%;
+    top: -6em;
+    z-index: 20;
 
+    a {
+        color: white;
+    }
+    a:hover {
+        color: $darkblue;
+    }
+}
+@media screen and (min-width: 44.375em) {
+    .app-link {
+        right: 7.6923%;
+    }
+}
+@media screen and (max-width: 810px) {
+    .app-link {
+        font-size: 14px;
+        padding: 1em;
+        width: 45%;
+        top: -6.4em;
+    }
+}

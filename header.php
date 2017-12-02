@@ -88,6 +88,12 @@
 
 		<div id="content" class="site-content site-inner">
 
+			<?php if (get_field('app_page_link')) : ?>
+			<div class="app-link">
+				<a href="<?php the_field('app_page_link'); ?>" title="Download the app">Download the app</a>
+			</div>
+			<?php endif; ?>
+
 		<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
     		<?php if(function_exists('bcn_display'))
 		    {

@@ -228,7 +228,7 @@ mailchimp
             color: $lightgrey;
         }
         ::-moz-placeholder { /* Firefox: ; 19+  */
-            color    :     $lightgrey;
+            color: $lightgrey;
         }
         :-ms-input-placeholder     { /*  IE 10+ */
             color: $lightgrey;
@@ -258,6 +258,11 @@ mailchimp
     }
 
 }
+@media screen and (min-width: 956px) and (max-width: 1210px) {
+       .mailchimp-form .gform_wrapper span.gform_description:after {
+            top: 40px;
+       } 
+    }
 
 /*--------------------------------------------------------------
     sidebar social nav
